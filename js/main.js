@@ -33,3 +33,17 @@ if (document.querySelector('#swiper-2')){
     },
   });
 }
+
+if (document.querySelector('#swiper-3')){
+  const swiper3 = new Swiper("#swiper-3", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    freeMode: false,
+    breakpoints: {
+      725: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+}
