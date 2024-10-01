@@ -47,3 +47,15 @@ if (document.querySelector('#swiper-3')){
     },
   });
 }
+
+if (document.querySelector('#swiper-4')){
+  const swiper4 = new Swiper("#swiper-4", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    freeMode: false,
+    pagination: {
+      el: ".main-sec1__swiper-pagination",
+      clickable: true,
+    },
+  });
+}
