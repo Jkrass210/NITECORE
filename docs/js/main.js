@@ -45,6 +45,10 @@ if (document.querySelector('#swiper-3')){
         spaceBetween: 20,
       },
     },
+    navigation: {
+      prevEl: ".main-sec3__button-next",
+      nextEl: ".main-sec3__button-prev",
+    },
   });
 }
 
