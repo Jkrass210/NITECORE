@@ -1,3 +1,14 @@
+import { openDrop } from './module/openDrop.js';
+
+if (document.querySelectorAll('.drop-down-btn')) {
+  const btnsDrop = document.querySelectorAll('.drop-down-btn');
+  btnsDrop.forEach(btn => {
+    btn.addEventListener('click', () => {
+      openDrop(btn, '.drop-down-item')
+    })
+  })
+}
+
 if (document.querySelector('#swiper-1')){
   const swiper1 = new Swiper("#swiper-1", {
     slidesPerView: 1,
