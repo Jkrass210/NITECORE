@@ -127,6 +127,7 @@ body {
   --color-switcher: #2e2e2e;
   --color-background-card: #353535;
   --color-background-path: #151515;
+  --color-background-menu1: #121212;
   --color-text-path: #555;
   --color-btn-gray3: #292929;
   --color-drop-gray3: #333;
@@ -142,6 +143,9 @@ body {
   .container {
     padding: 0 10px;
   }
+}
+.header {
+  position: relative;
 }
 .header__top {
   padding: 10px 0;
@@ -1853,6 +1857,130 @@ body {
 .btn7-wrapp {
   display: flex;
   justify-content: center;
+}
+
+.drop-down-catalog {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  background-color: var(--color-background-path);
+}
+.drop-down-catalog__wrapp {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.drop-down-catalog__menu {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  width: 520px;
+  min-width: 520px;
+}
+.drop-down-catalog__main-content {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  background-color: var(--color-background-menu1);
+  flex-grow: 1;
+}
+.drop-down-catalog__content-wrapp {
+  padding: 0 39px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.drop-down-catalog__list {
+  display: flex;
+  flex-direction: column;
+}
+.drop-down-catalog__item {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 315px;
+  border-right: 1px solid transparent;
+  transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+}
+.drop-down-catalog__item.hovered {
+  background-color: var(--colir-background-body);
+  border-color: var(--color-background-yellow);
+}
+.drop-down-catalog__item.hovered .drop-down-catalog__btn {
+  filter: invert(35%) sepia(96%) saturate(648%) hue-rotate(1deg) brightness(102%) contrast(101%);
+}
+.drop-down-catalog__btn {
+  padding: 9px 7px 9px 0;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 8px;
+  transition: filter 0.4s ease-in-out;
+}
+.drop-down-catalog__btn:focus, .drop-down-catalog__btn:focus-visible {
+  outline: none;
+}
+.drop-down-catalog__btn:hover, .drop-down-catalog__btn:focus-visible, .drop-down-catalog__btn:active {
+  filter: invert(35%) sepia(96%) saturate(648%) hue-rotate(1deg) brightness(102%) contrast(101%);
+}
+.drop-down-catalog__btn span {
+  text-align: start;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-text-white);
+}
+.drop-down-catalog__box-card {
+  margin-bottom: 30px;
+}
+.drop-down-catalog__links h4 {
+  margin-bottom: 15px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-text-white);
+}
+.drop-down-catalog__links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.drop-down-catalog__links ul a {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text-card-desc);
+  transition: color 0.4s ease-in-out;
+}
+.drop-down-catalog__links ul a:focus, .drop-down-catalog__links ul a:focus-visible {
+  outline: none;
+}
+.drop-down-catalog__links ul a:active, .drop-down-catalog__links ul a:focus-visible, .drop-down-catalog__links ul a:hover {
+  color: var(--color-background-yellow);
+}
+.drop-down-catalog .card1 {
+  position: relative;
+  padding: 42px 5px 5px;
+  min-width: 193px;
+}
+.drop-down-catalog .card1__box-info {
+  padding: 6px 4px 3px 6px;
+}
+.drop-down-catalog .card1__title {
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.drop-down-catalog .btn1__text {
+  padding: 4px 10px;
+  font-size: 8px;
+}
+.drop-down-catalog .btn1__box-svg {
+  padding: 0 6px;
+}
+.drop-down-catalog .btn1__box-svg svg {
+  width: 8px;
+  height: 7px;
+}
+.drop-down-catalog__content {
+  display: none;
 }
 
 .footer {
