@@ -9,7 +9,7 @@ if (document.querySelectorAll('.drop-down-btn')) {
   })
 }
 
-if (document.querySelector('#swiper-1')){
+if (document.querySelector('#swiper-1')) {
   const swiper1 = new Swiper("#swiper-1", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -27,7 +27,7 @@ if (document.querySelector('#swiper-1')){
   });
 }
 
-if (document.querySelector('#swiper-2')){
+if (document.querySelector('#swiper-2')) {
   const swiper2 = new Swiper("#swiper-2", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -45,7 +45,7 @@ if (document.querySelector('#swiper-2')){
   });
 }
 
-if (document.querySelector('#swiper-3')){
+if (document.querySelector('#swiper-3')) {
   const swiper3 = new Swiper("#swiper-3", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -63,7 +63,7 @@ if (document.querySelector('#swiper-3')){
   });
 }
 
-if (document.querySelector('#swiper-4')){
+if (document.querySelector('#swiper-4')) {
   const swiper4 = new Swiper("#swiper-4", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -73,4 +73,22 @@ if (document.querySelector('#swiper-4')){
       clickable: true,
     },
   });
+}
+
+if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) {
+  const swiper6 = new Swiper("#swiper-6", {
+    spaceBetween: 10,
+    slidesPerView: 5,
+    freeMode: false,
+  });
+  const swiper5 = new Swiper("#swiper-5", {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".product-card-sec1__button-next",
+      prevEl: ".product-card-sec1__button-prev",
+    },
+    thumbs: {
+      swiper: swiper6,
+    },
+  })
 }
