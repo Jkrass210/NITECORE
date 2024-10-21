@@ -1,4 +1,5 @@
 import { openDrop } from './module/openDrop.js';
+import { activateTab } from './module/activateTab.js';
 
 if (document.querySelectorAll('.drop-down-btn')) {
   const btnsDrop = document.querySelectorAll('.drop-down-btn');
@@ -90,5 +91,15 @@ if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) 
     thumbs: {
       swiper: swiper6,
     },
+  })
+}
+
+if (document.querySelector('.product-card-sec1__info')){
+  const parent = document.querySelector('.product-card-sec1__info')
+  const buttons = parent.querySelectorAll('.btn6')
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activateTab(btn.id, "btn6", "product-card-sec1__info")
+    })
   })
 }
