@@ -1,6 +1,7 @@
 import { openDrop } from './module/openDrop.js';
 import { activateTab } from './module/activateTab.js';
 import { updateActiveContent, setupCatalogButtons } from './module/dropDownCatalog.js';
+import { openMenu } from './module/openMenu.js';
 
 if (document.querySelectorAll('.drop-down-btn')) {
   const btnsDrop = document.querySelectorAll('.drop-down-btn');
@@ -105,20 +106,11 @@ if (document.querySelector('.product-card-sec1__info')){
   })
 }
 
-/*if (document.querySelectorAll('.drop-down-catalog__btn')){
-  const buttons = document.querySelectorAll('.drop-down-catalog__btn');
-  buttons.forEach(button => {
-    button.addEventListener('mouseover', () => {
-      button.closest('.drop-down-catalog__item').classList.add('hovered');
-    });
-
-    button.addEventListener('mouseout', () => {
-      button.closest('.drop-down-catalog__item').classList.remove('hovered');
-    });
-  });
-}*/
-
 if (document.querySelector('.drop-down-catalog')){
   updateActiveContent();
   setupCatalogButtons();
+}
+
+if (document.querySelector("#dropCatalog") && document.querySelector(`[data-window-id="dropCatalog"]`)) {
+  openMenu("dropCatalog")
 }
