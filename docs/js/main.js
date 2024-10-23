@@ -14,11 +14,15 @@ if (document.querySelectorAll('.drop-down-btn')) {
 
 if (document.querySelector('#swiper-1')) {
   const swiper1 = new Swiper("#swiper-1", {
-    slidesPerView: 1,
+    slidesPerView: 2,
     spaceBetween: 20,
     freeMode: false,
     breakpoints: {
-      725: {
+      570: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      980: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
@@ -32,11 +36,15 @@ if (document.querySelector('#swiper-1')) {
 
 if (document.querySelector('#swiper-2')) {
   const swiper2 = new Swiper("#swiper-2", {
-    slidesPerView: 1,
+    slidesPerView: 2,
     spaceBetween: 20,
     freeMode: false,
     breakpoints: {
-      725: {
+      570: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      980: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
@@ -54,7 +62,15 @@ if (document.querySelector('#swiper-3')) {
     spaceBetween: 20,
     freeMode: false,
     breakpoints: {
-      725: {
+      650: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      980: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1380: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
@@ -114,3 +130,8 @@ if (document.querySelector('.drop-down-catalog')){
 if (document.querySelector("#dropCatalog") && document.querySelector(`[data-window-id="dropCatalog"]`)) {
   openMenu("dropCatalog")
 }
+
+if (document.querySelector("#burgerMenu") && document.querySelector(`[data-window-id="burgerMenu"]`)) {
+  openMenu("burgerMenu", true)
+}
+

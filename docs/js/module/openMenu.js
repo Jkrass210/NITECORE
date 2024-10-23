@@ -1,10 +1,15 @@
-export function openMenu (btnId) {
+import { onStopScroll, offStopScroll } from './scroll.js';
+
+export function openMenu (btnId, scroll = false) {
   const btn = document.querySelector(`#${btnId}`)
   const menu = document.querySelector(`[data-window-id="${btnId}"]`);
 
   btn.addEventListener('click', () => {
     btn.classList.toggle('active');
     menu.classList.toggle('active');
+    if(scroll) {
+      onStopScroll()
+    }
   })
 
   document.addEventListener('click', (event) => {
@@ -14,6 +19,9 @@ export function openMenu (btnId) {
     if (!isClickInsideBtn && !isClickInsideMenu) {
       btn.classList.remove('active');
       menu.classList.remove('active');
+      if(scroll) {
+        offStopScroll()
+      }
     }
   });
 
@@ -21,6 +29,9 @@ export function openMenu (btnId) {
     if (event.key === 'Escape') {
       btn.classList.remove('active');
       menu.classList.remove('active');
+      if(scroll) {
+        offStopScroll()
+      }
     }
   });
 }
