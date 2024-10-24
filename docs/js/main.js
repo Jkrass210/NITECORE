@@ -112,7 +112,7 @@ if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) 
   })
 }
 
-if (document.querySelector('.product-card-sec1__info')){
+if (document.querySelector('.product-card-sec1__info')) {
   const parent = document.querySelector('.product-card-sec1__info')
   const buttons = parent.querySelectorAll('.btn6')
   buttons.forEach(btn => {
@@ -122,7 +122,7 @@ if (document.querySelector('.product-card-sec1__info')){
   })
 }
 
-if (document.querySelector('.drop-down-catalog')){
+if (document.querySelector('.drop-down-catalog')) {
   updateActiveContent();
   setupCatalogButtons();
 }
@@ -135,3 +135,40 @@ if (document.querySelector("#burgerMenu") && document.querySelector(`[data-windo
   openMenu("burgerMenu", true)
 }
 
+if (document.querySelector('#swiper-7')) {
+  let swiper7;
+
+  function initSwiper() {
+    swiper7 = new Swiper('#swiper-7', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
+
+  function destroySwiper() {
+    if (swiper7) {
+      swiper7.destroy(true, true);
+      swiper7 = null;
+    }
+  }
+
+  function handleResize() {
+    if (window.innerWidth < 1030 && !swiper7) {
+      initSwiper();
+    } else if (window.innerWidth >= 1030 && swiper7) {
+      destroySwiper();
+    }
+  }
+  handleResize();
+  window.addEventListener('resize', handleResize);
+}
