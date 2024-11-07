@@ -2,6 +2,16 @@ import { openDrop } from './module/openDrop.js';
 import { activateTab } from './module/activateTab.js';
 import { updateActiveContent, setupCatalogButtons } from './module/dropDownCatalog.js';
 import { openMenu } from './module/openMenu.js';
+import { testWebP } from './module/testWebP.js'
+
+testWebP(function (support) {
+  if (support == true) {
+    document.querySelector('body').classList.add('webp');
+    console.log("выполнился webp")
+  }else{
+    document.querySelector('body').classList.add('no-webp');
+  }
+});
 
 if (document.querySelectorAll('.drop-down-btn')) {
   const btnsDrop = document.querySelectorAll('.drop-down-btn');
@@ -22,7 +32,7 @@ if (document.querySelector('#swiper-1')) {
         slidesPerView: 3,
         spaceBetween: 20,
       },
-      980: {
+      1090: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
@@ -44,7 +54,7 @@ if (document.querySelector('#swiper-2')) {
         slidesPerView: 3,
         spaceBetween: 20,
       },
-      980: {
+      1090: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
@@ -82,16 +92,25 @@ if (document.querySelector('#swiper-3')) {
   });
 }
 
-if (document.querySelector('#swiper-4')) {
+if (document.querySelector('#swiper-8') && document.querySelector('#swiper-4')) {
   const swiper4 = new Swiper("#swiper-4", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: false,
+    reverseDirection: true,
+  });
+  const swiper8 = new Swiper("#swiper-8", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    freeMode: false,
+
     pagination: {
       el: ".main-sec1__swiper-pagination",
       clickable: true,
     },
   });
+  swiper4.controller.control = swiper8;
+  swiper8.controller.control = swiper4;
 }
 
 if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) {
