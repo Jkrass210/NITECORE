@@ -113,23 +113,28 @@ if (document.querySelector('#swiper-8') && document.querySelector('#swiper-4')) 
   swiper8.controller.control = swiper4;
 }
 
-if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) {
-  const swiper6 = new Swiper("#swiper-6", {
-    spaceBetween: 10,
-    slidesPerView: 5,
-    freeMode: false,
-  });
-  const swiper5 = new Swiper("#swiper-5", {
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".product-card-sec1__button-next",
-      prevEl: ".product-card-sec1__button-prev",
-    },
-    thumbs: {
-      swiper: swiper6,
-    },
-  })
+function initSwiper5() {
+  if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) {
+    const swiper6 = new Swiper("#swiper-6", {
+      spaceBetween: 10,
+      slidesPerView: 5,
+      freeMode: false,
+      //watchOverflow: true,
+      //watchSlidesProgress: true,
+    });
+    const swiper5 = new Swiper("#swiper-5", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".product-card-sec1__button-next",
+        prevEl: ".product-card-sec1__button-prev",
+      },
+      thumbs: {
+        swiper: swiper6,
+      },
+    })
+  }
 }
+
 
 if (document.querySelector('.product-card-sec1__info')) {
   const parent = document.querySelector('.product-card-sec1__info')
@@ -142,7 +147,7 @@ if (document.querySelector('.product-card-sec1__info')) {
 }
 
 if (document.querySelector('.drop-down-catalog')) {
-  updateActiveContent();
+  //updateActiveContent();
   setupCatalogButtons();
 }
 
@@ -191,3 +196,80 @@ if (document.querySelector('#swiper-7')) {
   handleResize();
   window.addEventListener('resize', handleResize);
 }
+
+if (!document.querySelector('.new_block') && document.querySelector('#swiper-6')) {
+  initSwiper5()
+} else if (document.querySelector('.new_block') && document.querySelector('#swiper-6')) {
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.product-card-sec1__equipment-list-1') &&
+        document.querySelector('#swiper-6') &&
+        document.querySelector('.new_block')) {
+      initializeSwiperSwitcher({
+        buttonListSelector: '.product-card-sec1__equipment-list-1',
+        swiperContainerId: 'swiper-6',
+        newBlockSelector: '.new_block',
+      });
+    }
+  });
+}
+
+function initializeSwiperSwitcher({
+  buttonListSelector,
+  swiperContainerId,
+  newBlockSelector,
+}) {
+  const buttonList = document.querySelector(buttonListSelector);
+  const swiperContainer = document.getElementById(swiperContainerId);
+  const newBlock = document.querySelector(newBlockSelector);
+
+  const updateSwiper = (index) => {
+    console.log('Индекс для обновления Swiper:', index);
+    const allSwipers = newBlock.querySelectorAll('.swiper-wrapper-6');
+    console.log('Все списки ul:', allSwipers);
+    const selectedSwiper = allSwipers[index];
+
+    if (selectedSwiper) {
+      swiperContainer.innerHTML = '';
+      const clonedSwiper = selectedSwiper.cloneNode(true);
+      swiperContainer.appendChild(clonedSwiper);
+      initSwiper5()
+      console.log(`Список с индексом ${index} вставлен.`);
+    } else {
+      console.error(`Список с индексом ${index} не найден.`);
+    }
+  };
+
+  buttonList.addEventListener('click', (event) => {
+    console.log('Клик по кнопке');
+    const button = event.target.closest('.product-card-sec1__btn-fasteners');
+    if (!button) return;
+
+    const li = button.closest('li');
+    const index = Array.from(buttonList.children).indexOf(li);
+    console.log('Индекс выбранного элемента:', index);
+
+    buttonList.querySelectorAll('li').forEach((item) =>
+      item.classList.remove('selected')
+    );
+    li.classList.add('selected');
+    updateSwiper(index);
+  });
+
+  const selectedIndex = Array.from(buttonList.children).findIndex((li) =>
+    li.classList.contains('selected')
+  );
+  if (selectedIndex !== -1) {
+    console.log('При загрузке найден элемент с индексом:', selectedIndex);
+    updateSwiper(selectedIndex);
+  } else {
+    console.warn('Нет элемента с классом selected при загрузке.');
+  }
+}
+
+
+
+
+
+
+
+
