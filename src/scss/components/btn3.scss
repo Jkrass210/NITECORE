@@ -1,0 +1,45 @@
+.btn3 {
+  display: flex;
+  height: 100%;
+
+  &__btn {
+    max-height: 35px;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: var(--color-text-black);
+    background-color: var(--color-background-yellow);
+    transition: color 0.4s ease-in-out;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible,
+    &:active,
+    &:hover {
+      color: var(--color-text-white);
+    }
+  }
+  
+}
+
+@media (max-width: 1030px) {
+  .btn3 {
+    flex: 1;
+    &__btn {
+      width: 100%;
+      height: auto;
+      padding: 12px 20px;
+    }
+    
+  }
+}

@@ -1,0 +1,77 @@
+.slide-hero {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  background-color: var(--color-text-black);
+  transition: background-color 0.4s ease-in-out;
+
+  &__container{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+
+    picture {
+      position: absolute;
+    }
+  }
+    
+  &__line {
+    height: 100%;
+    width: 720px;
+    position: relative;
+    background-color: var(--color-background-yellow);
+    clip-path: polygon(35% 0%, 100% 0%, 65% 100%, 0% 100%);
+    background-image: url(../img/main-page/sec1/beac1.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-color 0.4s ease-in-out;
+  }
+}
+
+@media (max-width: 1030px) {
+  .slide-hero {
+    &__line {
+      width: 550px;
+    }
+
+    &__container {
+      picture {
+        bottom: 0;
+        right: -30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 669px) {
+  .slide-hero {
+    &__container{
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &__container{
+      padding: 0;
+    }
+
+    &__line {
+      height: 140px;
+      width: 100%;
+      transform: none;
+      clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 70%);
+      background-image: url("../img/main-page/sec1/beac1(340).png");
+    }
+
+    &__container {
+      picture {
+        max-width: 220px;
+        bottom: auto;
+        right: auto;
+        left: 0;
+        top: -10px;
+      }
+    }
+  }
+}

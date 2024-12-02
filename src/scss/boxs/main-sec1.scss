@@ -1,0 +1,128 @@
+.main-sec1 {
+  position: relative;
+  padding: 0;
+
+  &__container {
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    padding: 89px 45% 74px 0;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-text-white);
+
+    & span {
+      color: var(--color-background-yellow);
+    }
+  }
+
+  &__desc {
+    margin-bottom: 37px;
+    max-width: 580px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__marker {
+    position: absolute;
+    right: 45%;
+    top: 45%;
+  }
+
+  &__swiper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__swiper-slide {
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  &__swiper-slide-2 {
+    height: auto;
+    margin: auto;
+  }
+
+  &__swiper-pagination {
+    & .swiper-pagination-bullet {
+      border-radius: 0;
+      transform: skew(-45deg);
+      width: 10px;
+      height: 5px;
+      opacity: 0.5;
+      margin: 2px !important;
+      transition: border 0.4s ease-in-out;
+    }
+
+    & .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: #000;
+      opacity: 0.5;
+      border: 1px solid #656565;
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .main-sec1 {
+    &__marker {
+      display: none;
+    }
+
+    &__content {
+      padding: 50px 30% 50px 0;
+    }
+
+    &__swiper-slide-2 {
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+  }
+}
+
+@media (max-width: 669px) {
+  .main-sec1 {
+    padding-top: 0;
+    padding-bottom: 0;
+    &__content {
+      padding: 126px 0 35px 0;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__desc {
+      margin-bottom: 30px;
+    }
+
+    &__swiper-pagination {
+      padding: 0 20px;
+      text-align: start;
+
+      .swiper-pagination-bullet {
+        background-color: var(--color-drop-gray6);
+      }
+    }
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 32px;
+  }
+}

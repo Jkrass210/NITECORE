@@ -1,0 +1,56 @@
+.box-swiper1 {
+  &__btn-swiper-group {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+  }
+
+  &__swiper-button:first-child {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  
+  &__swiper-button {
+    width: 43px;
+    min-width: 43px;
+    height: 43px;
+    background-color: var(--color-background-yellow);
+    display: flex;
+    color: var(--color-text-black);
+    align-items: center;
+    justify-content: center;
+    transition: color 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+
+    &.swiper-button-disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: var(--color-background-card);
+    }
+  }
+  
+  &__box-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1030px) {
+  .box-swiper1 {
+    &__btn-swiper-group {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
