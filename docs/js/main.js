@@ -1,6 +1,6 @@
 import { openDrop } from './module/openDrop.js';
 import { activateTab } from './module/activateTab.js';
-import { updateActiveContent, setupCatalogButtons } from './module/dropDownCatalog.js';
+import { updateContent, setupMenuButtons, handleResize, setupMobileMenu } from './module/dropDownCatalog.js';
 import { openMenu } from './module/openMenu.js';
 import { testWebP } from './module/testWebP.js'
 
@@ -22,7 +22,7 @@ if (document.querySelectorAll('.drop-down-btn')) {
   })
 }
 
-if (document.querySelector('#swiper-1')) {
+if (document.querySelector('#swiper-1') && document.querySelector('#swiper-1 > .swiper-wrapper') && document.querySelectorAll('#swiper-1 > .swiper-slide')) {
   const swiper1 = new Swiper("#swiper-1", {
     slidesPerView: 2,
     spaceBetween: 20,
@@ -44,7 +44,7 @@ if (document.querySelector('#swiper-1')) {
   });
 }
 
-if (document.querySelector('#swiper-2')) {
+if (document.querySelector('#swiper-2') && document.querySelector('#swiper-2 > .swiper-wrapper') && document.querySelectorAll('#swiper-2 > .swiper-slide')) {
   const swiper2 = new Swiper("#swiper-2", {
     slidesPerView: 2,
     spaceBetween: 20,
@@ -66,7 +66,7 @@ if (document.querySelector('#swiper-2')) {
   });
 }
 
-if (document.querySelector('#swiper-3')) {
+if (document.querySelector('#swiper-3') && document.querySelector('#swiper-3 > .swiper-wrapper') && document.querySelectorAll('#swiper-3 > .swiper-slide')) {
   const swiper3 = new Swiper("#swiper-3", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -92,7 +92,7 @@ if (document.querySelector('#swiper-3')) {
   });
 }
 
-if (document.querySelector('#swiper-8') && document.querySelector('#swiper-4')) {
+if (document.querySelector('#swiper-8') && document.querySelector('#swiper-8 > .swiper-wrapper') && document.querySelectorAll('#swiper-8 > .swiper-slide') && document.querySelector('#swiper-4') && document.querySelector('#swiper-4 > .swiper-wrapper') && document.querySelectorAll('#swiper-4 > .swiper-slide')) {
   const swiper4 = new Swiper("#swiper-4", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -114,7 +114,7 @@ if (document.querySelector('#swiper-8') && document.querySelector('#swiper-4')) 
 }
 
 function initSwiper5() {
-  if (document.querySelector('#swiper-5') && document.querySelector('#swiper-6')) {
+  if (document.querySelector('#swiper-5') && document.querySelector('#swiper-5 > .swiper-wrapper') && document.querySelectorAll('#swiper-5 > .swiper-slide') && document.querySelector('#swiper-6') && document.querySelector('#swiper-6 > .swiper-wrapper') && document.querySelectorAll('#swiper-6 > .swiper-slide')) {
     const swiper6 = new Swiper("#swiper-6", {
       spaceBetween: 10,
       slidesPerView: 5,
@@ -147,9 +147,26 @@ if (document.querySelector('.product-card-sec1__info')) {
 }
 
 if (document.querySelector('.drop-down-catalog')) {
-  //updateActiveContent();
-  setupCatalogButtons();
+  if (window.innerWidth > 950){
+    setupMenuButtons({
+      catalogSelector: '.drop-down-catalog',
+      buttonSelector: '.drop-down-catalog__btn',
+      contentWrapperSelector: '.drop-down-catalog__content-wrapp',
+      targetSelector: '.drop-down-catalog__main-content',
+      activeClass: 'active',
+      hoveredClass: 'hovered',
+      isNested: false,
+    });
+  } else if (window.innerWidth <= 950) {
+    setupMobileMenu()
+  }
+  
+  
+  window.addEventListener('resize', handleResize);
+  handleResize();
 }
+
+
 
 if (document.querySelector("#dropCatalog") && document.querySelector(`[data-window-id="dropCatalog"]`)) {
   openMenu("dropCatalog")
@@ -159,7 +176,7 @@ if (document.querySelector("#burgerMenu") && document.querySelector(`[data-windo
   openMenu("burgerMenu", true)
 }
 
-if (document.querySelector('#swiper-7')) {
+if (document.querySelector('#swiper-7') && document.querySelector('#swiper-7 > .swiper-wrapper') && document.querySelectorAll('#swiper-7 > .swiper-slide')) {
   let swiper7;
 
   function initSwiper() {
@@ -197,9 +214,9 @@ if (document.querySelector('#swiper-7')) {
   window.addEventListener('resize', handleResize);
 }
 
-if (!document.querySelector('.new_block') && document.querySelector('#swiper-6')) {
+if (!document.querySelector('.new_block') && document.querySelector('#swiper-6') /*&& document.querySelector('#swiper-6 > .swiper-wrapper') && document.querySelectorAll('#swiper-6 > .swiper-slide')*/) {
   initSwiper5()
-} else if (document.querySelector('.new_block') && document.querySelector('#swiper-6')) {
+} else if (document.querySelector('.new_block') && document.querySelector('#swiper-6') /*&& document.querySelector('#swiper-6 > .swiper-wrapper') && document.querySelectorAll('#swiper-6 > .swiper-slide')*/) {
   document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.product-card-sec1__equipment-list-1') &&
         document.querySelector('#swiper-6') &&
@@ -265,6 +282,54 @@ function initializeSwiperSwitcher({
     console.warn('Нет элемента с классом selected при загрузке.');
   }
 }
+
+function switchTheme(theme) {
+  const currentLink = document.querySelector('link[href*="light.min.css"]');
+  
+  if (theme === 'light') {
+    if (!currentLink) {
+      const lightLink = document.createElement('link');
+      lightLink.rel = 'stylesheet';
+      lightLink.href = '/local/templates/ni/css/light.min.css';
+      lightLink.classList.add('theme-style');
+      document.head.appendChild(lightLink);
+    }
+  } else if (theme === 'dark') {
+    if (currentLink) {
+      currentLink.remove();
+    }
+  }
+}
+
+function saveThemeToLocalStorage(theme) {
+  localStorage.setItem('color-scheme', theme);
+}
+
+function getThemeFromLocalStorage() {
+  return localStorage.getItem('color-scheme') || 'dark';
+}
+
+function applySavedTheme() {
+  const savedTheme = getThemeFromLocalStorage();
+  document.querySelector(`.switcher__radio[value="${savedTheme}"]`).checked = true;
+  switchTheme(savedTheme);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  applySavedTheme();
+
+  const themeRadios = document.querySelectorAll('.switcher__radio');
+  themeRadios.forEach((radio) => {
+    radio.addEventListener('change', (e) => {
+      const selectedTheme = e.target.value;
+      switchTheme(selectedTheme);
+      saveThemeToLocalStorage(selectedTheme);
+    });
+  });
+});
+
+
+
 
 
 
