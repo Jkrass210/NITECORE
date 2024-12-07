@@ -491,6 +491,22 @@ body {
   color: var(--color-text-black);
 }
 
+.product-card-sec1__box-content p span {
+  color: var(--color-text-black) !important;
+}
+
+.product-card-sec1__box-content div {
+  color: var(--color-text-black);
+}
+
+.product-card-sec1__box-content ul li {
+  color: var(--color-text-black) !important;
+}
+
+.product-card-sec1__box-content ul li span {
+  color: var(--color-text-black) !important;
+}
+
 .product-card-sec1__btn-fasteners {
   color: var(--color-text-black);
   background-color: var(--color-background-card);

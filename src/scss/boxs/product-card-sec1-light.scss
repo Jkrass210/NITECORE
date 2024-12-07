@@ -66,6 +66,19 @@
   &__box-content {
     p {
       color: var(--color-text-black);
+
+      span {
+        color: var(--color-text-black) !important;
+      }
+    }
+    div {
+      color: var(--color-text-black);
+    }
+    ul li {
+      color: var(--color-text-black) !important;
+      span {
+        color: var(--color-text-black) !important;
+      }
     }
   }
 

@@ -1,8 +1,9 @@
 import { openDrop } from './module/openDrop.js';
 import { activateTab } from './module/activateTab.js';
-import { updateContent, setupMenuButtons, handleResize, setupMobileMenu } from './module/dropDownCatalog.js';
+import { updateContent, openMenuLevel1, openMenuLevel2, handleResize, setupMobileMenu } from './module/dropDownCatalog.js';
 import { openMenu } from './module/openMenu.js';
 import { testWebP } from './module/testWebP.js'
+import { toggleModal } from './module/toggleModal.js'
 
 testWebP(function (support) {
   if (support == true) {
@@ -147,15 +148,13 @@ if (document.querySelector('.product-card-sec1__info')) {
 }
 
 if (document.querySelector('.drop-down-catalog')) {
+  const boxCatalog = document.querySelector('.drop-down-catalog')
   if (window.innerWidth > 950){
-    setupMenuButtons({
-      catalogSelector: '.drop-down-catalog',
-      buttonSelector: '.drop-down-catalog__btn',
-      contentWrapperSelector: '.drop-down-catalog__content-wrapp',
-      targetSelector: '.drop-down-catalog__main-content',
-      activeClass: 'active',
-      hoveredClass: 'hovered',
-      isNested: false,
+    openMenuLevel1({
+      boxCatalog:boxCatalog,
+      classBtns:'button.drop-down-catalog__btn', 
+      classBox:'.drop-down-catalog__content-wrapp', 
+      targetSelector:'.drop-down-catalog__main-content'
     });
   } else if (window.innerWidth <= 950) {
     setupMobileMenu()
@@ -328,7 +327,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+if (document.querySelector('a.btn5') && document.querySelector('.modal_del_card')) {
+  toggleModal('a.btn5', '.modal_del_card','.modal_del_close','.modal_del');
+}
 
+if (document.querySelector('a.btn-track-order') && document.querySelector('.modal_del_head_top')) {
+  toggleModal('a.btn-track-order', '.modal_del_head_top','.modal_del_close','.modal_del_head');
+}
 
 
 

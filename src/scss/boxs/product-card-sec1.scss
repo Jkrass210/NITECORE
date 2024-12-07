@@ -253,6 +253,14 @@
       font-size: 15px;
       line-height: 120%;
       color: var(--color-text-white);
+
+      span {
+        color: var(--color-text-white) !important;
+      }
+    }
+
+    div {
+      color: var(--color-text-white);
     }
 
     p:last-child {
@@ -261,6 +269,13 @@
 
     .product-card-sec1__box-characteristic p {
       margin-bottom: 0;
+    }
+
+    ul li {
+      color: var(--color-text-white) !important;
+      span {
+        color: var(--color-text-white) !important;
+      }
     }
   }
   
