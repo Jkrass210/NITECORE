@@ -1,0 +1,40 @@
+.btn-scroll {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 43px;
+  min-width: 43px;
+  height: 43px;
+  background-color: var(--color-background-yellow);
+  display: flex;
+  color: var(--color-text-black);
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: rotate(270deg);
+  transition: color 0.4s ease-in-out, visibility 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: var(--color-background-card);
+  }
+
+  &__box-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
