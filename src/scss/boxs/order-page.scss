@@ -108,7 +108,7 @@
           margin-bottom: 18px;
           font-family: var(--font-family);
           font-weight: 500;
-          font-size: 16px;
+          font-size: 20px;
           letter-spacing: 0.03em;
           color: var(--color-text-white);
         }
@@ -210,22 +210,54 @@
         margin-bottom: 5px;
         font-family: var(--third-family);
         font-weight: 500;
-        font-size: 14px;
-        line-height: 150%;
+        font-size: 16px;
         color: var(--color-text-white);
       }
       input {
-        min-height: 33px;
+        padding: 10px;
         width: 100%;
-        background-color: transparent;
         border: 1px solid var(--colir-background-body);
+        background-color: var(--color-background-card);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--color-text-white);
+        transition: border-color 0.4s ease-in-out;
+
+        &:focus,
+        &:focus-visible {
+          outline: none;
+        }
+
+        &:focus-visible,
+        &:hover,
+        &:active {
+          border-color: var(--color-background-yellow);
+        }
       }
       textarea {
         resize: none;
         min-height: 84px;
         width: 100%;
-        background-color: transparent;
+        padding: 10px;
         border: 1px solid var(--colir-background-body);
+        background-color: var(--color-background-card);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--color-text-white);
+        transition: border-color 0.4s ease-in-out;
+
+        &:focus,
+        &:focus-visible {
+          outline: none;
+        }
+
+        &:focus-visible,
+        &:hover,
+        &:active {
+          border-color: var(--color-background-yellow);
+        }
       }
     }
 
@@ -267,8 +299,46 @@
         }
       }
     }
+  }
+}
 
-    
+@media (max-width: 1200px) {
+  .order-page-container {
+    #bx-soa-order {
+      .right-block {
+        flex: 1;
+      }
+    }
+  }
+}
 
+@media (max-width: 1030px) {
+  .order-page-container {
+    #bx-soa-order {
+      flex-direction: column-reverse;
+
+      .bx-soa-cart-total.bx-soa-cart-total-fixed {
+        position: static;
+        top: auto;
+      }
+
+      .right-block {
+        width: 100%;
+      }
+      .left-block {
+        width: 100%;
+      }
+
+      .bx-soa-pp {
+        flex-direction: column;
+        .col-sm-7 {
+          width: 100%;
+          gap: 5px;
+        }
+        .col-sm-5 {
+          width: 100%;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,118 @@
+.popup-window-titlebar-text,
+.popup-window-titlebar-text-version {
+  font-family: var(--font-family);
+  font-size: 18px;
+}
+
+.popup-window-close-icon.popup-window-titlebar-close-icon.--large,
+.popup-window-titlebar-close-icon {
+  background-color: var(--color-background-yellow);
+}
+
+.popup-window-buttons {
+  padding: 0;
+}
+
+.btn.btn-primary.btn-buy.btn-sm,
+.btn.btn-default.btn-buy.btn-sm {
+  font-family: var(--font-family);
+  display: flex;
+  padding: 20px;
+  background-color: var(--color-background-yellow);
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-black);
+  transition: color 0.4s ease-in-out;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: var(--color-text-white);
+  }
+}
+
+.pop_block {
+  p {
+    font-family: var(--font-family);
+  }
+}
+
+span[data-entity="compare-title"] {
+  display: flex;
+}
+
+.mb-3.d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 47px;
+  background-color: var(--color-background-card);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 120%;
+  color: var(--color-text-white);
+}
+
+small {
+  font-size: 100%;
+}
+
+.btn.btn-sm.btn-primary, .btn.btn-sm.btn-secondary {
+  padding: 10px;
+  background-color: var(--color-background-yellow);
+  display: inline-block;
+  color: var(--color-text-black);
+  transition: color 0.4s ease-in-out;
+
+  &:focus,&:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible,&:hover,&:active {
+    color: var(--color-text-white);
+  }
+}
+
+.catalog-compare.mb-4.bx-site {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.catalog-compare-filter.p-3.mb-3 {
+  padding: 32px 47px;
+  background-color: var(--color-background-card);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 120%;
+  color: var(--color-text-white);
+}
+
+.catalog-compare-table.table-responsive {
+  padding: 32px 47px;
+  background-color: var(--color-background-card);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 120%;
+  color: var(--color-text-white);
+}
+
+.text-danger {
+  text-decoration: underline;
+
+  &:focus, &:focus-visible {
+    outline: none;
+  }
+
+  &:hover, &:focus-visible, &:active {
+    color: var(--color-background-yellow);
+  }
+}

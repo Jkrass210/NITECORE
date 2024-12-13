@@ -136,7 +136,6 @@ function initSwiper5() {
   }
 }
 
-
 if (document.querySelector('.product-card-sec1__info')) {
   const parent = document.querySelector('.product-card-sec1__info')
   const buttons = parent.querySelectorAll('.btn6')
@@ -164,8 +163,6 @@ if (document.querySelector('.drop-down-catalog')) {
   window.addEventListener('resize', handleResize);
   handleResize();
 }
-
-
 
 if (document.querySelector("#dropCatalog") && document.querySelector(`[data-window-id="dropCatalog"]`)) {
   openMenu("dropCatalog")
@@ -334,6 +331,50 @@ if (document.querySelector('a.btn5') && document.querySelector('.modal_del_card'
 if (document.querySelector('a.btn-track-order') && document.querySelector('.modal_del_head_top')) {
   toggleModal('a.btn-track-order', '.modal_del_head_top','.modal_del_close','.modal_del_head');
 }
+
+
+if(document.querySelector('.product-card-sec1__box-left') && document.querySelector('.product-card-sec1__hidden-swiper-mobil')) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const boxLeftWrapp = document.querySelector('.product-card-sec1__box-left-wrapp');
+    const hiddenSwiperMobile = document.querySelector('.product-card-sec1__hidden-swiper-mobil');
+    const originalParent = boxLeftWrapp.parentElement;
+
+    const handleResize1 = () => {
+      const screenWidth = window.innerWidth;
+  
+      if (screenWidth < 1030) {
+        if (!hiddenSwiperMobile.contains(boxLeftWrapp)) {
+          hiddenSwiperMobile.appendChild(boxLeftWrapp);
+        }
+      } else {
+        if (!originalParent.contains(boxLeftWrapp)) {
+          originalParent.appendChild(boxLeftWrapp);
+        }
+      }
+    };
+    window.addEventListener('resize', handleResize1);
+    handleResize1();
+  });  
+}
+
+
+if (document.querySelectorAll(".product-card-sec1__item-tab .btn6") && document.querySelectorAll(".product-card-sec1__box-content")) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".product-card-sec1__item-tab .btn6");
+    const contentBlocks = document.querySelectorAll(".product-card-sec1__box-content");
+
+    const activeButton = Array.from(tabButtons).find(button => button.classList.contains("active"));
+    if (!activeButton && tabButtons.length > 0) {
+      tabButtons[0].classList.add("active");
+    }
+
+    const activeContent = Array.from(contentBlocks).find(block => block.classList.contains("active"));
+    if (!activeContent && contentBlocks.length > 0) {
+      contentBlocks[0].classList.add("active");
+    }
+  });
+}
+
 
 
 

@@ -5,12 +5,12 @@
   
   &__list {
     white-space: nowrap;
-    overflow: auto;
+    overflow-y: auto;
     display: flex;
     align-items: center;
     gap: 10px;
     scrollbar-width: none;
-    -ms-overflow-style: none;/////////
+    -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
       display: none;

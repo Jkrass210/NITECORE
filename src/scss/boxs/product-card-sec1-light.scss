@@ -87,3 +87,11 @@
     background-color: var(--color-background-card);
   }
 }
+
+@media (max-width: 1030px) {
+  .product-card-sec1 {
+    &__btn {
+      border: none;
+    }
+  }
+}
