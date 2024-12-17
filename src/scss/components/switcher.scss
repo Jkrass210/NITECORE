@@ -1,70 +1,36 @@
 .switcher {
-  &__wrapp {
-    position: relative;
-    background-color: transparent;
-    width: 100%;
-    padding: 2px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: none
-  }
+  width: 44px;
+  min-width: 44px;
+  height: 22px;
+  position: relative;
 
-  &__legend {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &__radio {
-    position: relative;
+  &__label {
     cursor: pointer;
-    z-index: 1;
-    -webkit-animation: none;
-    appearance: none;
-    margin: 0;
-    width: 18px;
-    min-width: 18px;
-    height: 18px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10px;
-
-    &:focus,
-    &:focus-visible {
-      outline: none;
-    }
-  }
-
-  &__radio.dark:checked {
-    background-image: url(../img/header/swicher/dark.svg);
-    background-position: center right 2px;
-  }
-
-  &__radio.light:checked {
-    background-image: url(../img/header/swicher/sun.svg);
-    background-position: center;
+    display: flex;
   }
 
   &__status {
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    inset: 0;
     background-color: var(--color-switcher);
     border-radius: 57px;
-    background-image: url(../img/header/swicher/status.svg);
-    background-repeat: no-repeat;
-    background-size: 18px;
+    background-image: url(../img/header/swicher/dark.svg), url(../img/header/swicher/status.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 10px, 18px;
+    background-position: center right 6px, center right 2px;
     transition: background-position 0.2s ease-in-out;
   }
 
-  &__radio.dark:checked ~ .switcher__status {
-    background-position: center right 2px;
+  &__input {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+    opacity: 0;
   }
 
-  &__radio.light:checked ~ .switcher__status {
-    background-position: center left 2px;
+  &__input:checked + .switcher__status{
+    background-image: url(../img/header/swicher/sun.svg), url(../img/header/swicher/status.svg);
+    background-position: center left 6px, center left 2px;
   }
 }
 

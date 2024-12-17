@@ -14,15 +14,17 @@
       <span class="card3__size">@@textSize</span>
     </a>
   </div>
-  @@include('./checkbox1.html',{"idInput":"@@idInput","text":"@@text"})
-  <div class="card3__box-content">
-    <div class="card3__box-price">
-      <p class="card3__price">
-        <span>3400&nbsp;р.</span>
-        <span>3400&nbsp;р.</span>
-      </p>
-      @@include('./counter1.html')
-      @@include('./btn3.html')
+  <div class="card3__box-bottom">
+    @@include('./checkbox1.html',{"idInput":"@@idInput","text":"@@text"})
+    <div class="card3__box-content">
+      <div class="card3__box-price">
+        <p class="card3__price">
+          <span>3400&nbsp;р.</span>
+          <span>3400&nbsp;р.</span>
+        </p>
+        @@include('./counter1.html')
+        @@include('./btn3.html')
+      </div>
     </div>
   </div>
 </div>

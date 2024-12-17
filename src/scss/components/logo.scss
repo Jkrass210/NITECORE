@@ -1,9 +1,14 @@
 .logo {
   display: flex;
+  align-items: center;
 
   &__link {
     display: flex;
     align-items: center;
+
+    picture {
+      display: flex;
+    }
 
     img {
       max-width: 235px;

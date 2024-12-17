@@ -125,6 +125,8 @@
     align-items: center;
 
     & a {
+      display: flex;
+      align-items: center;
       color: var(--color-text-white);
       transition: color 0.4s ease-in-out;
 
