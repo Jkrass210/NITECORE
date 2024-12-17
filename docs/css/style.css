@@ -5308,6 +5308,10 @@ small {
     max-width: 100%;
   }
 
+  .webp .main-sec6__content {
+    background-image: none !important;
+  }
+
   .main-sec6 {
     padding: 0;
   }
