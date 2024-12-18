@@ -1,6 +1,35 @@
 .header {
   position: relative;
   z-index: 4;
+
+  &__top-old {
+    padding: 10px 0;
+    background-color: transparent;
+  }
+
+  &__old-link {
+    padding: 7px 15px;
+    background-color: var(--color-background-yellow);
+    border-radius: 57px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: lowercase;
+    color: var(--color-text-black);
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+      
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible,
+    &:hover,
+    &:active {
+      background-color: var(--color-text-black);
+      color: var(--color-text-white);
+    }
+  }
   
   &__top {
     padding: 10px 0;
@@ -146,6 +175,10 @@
 
 @media (max-width: 1030px) {
   .header {
+    &__top-old {
+      display: none;
+    }
+
     &__top {
       padding: 8px 0;
     }

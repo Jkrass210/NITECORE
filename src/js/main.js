@@ -298,8 +298,8 @@ if (document.querySelector('.switcher')) {
       if (!currentLink) {
         const lightLink = document.createElement('link');
         lightLink.rel = 'stylesheet';
-        //lightLink.href = '../css/light.min.css';
-        lightLink.href = '/local/templates/ni/css/light.min.css';
+        lightLink.href = '../css/light.min.css';
+        //lightLink.href = '/local/templates/ni/css/light.min.css';
         lightLink.classList.add('theme-style');
         document.head.appendChild(lightLink);
       }

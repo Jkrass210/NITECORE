@@ -777,6 +777,10 @@ hr.bxe-light {
   color: var(--color-text-black);
 }
 
+.bx-sbb-empty-cart-desc {
+  color: var(--color-text-black);
+}
+
 @media (max-width: 1200px) {
   .catalog-sec1__list-catalog {
     -ms-grid-columns: 1fr 1fr 1fr;

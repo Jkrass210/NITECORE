@@ -109,3 +109,20 @@
     font-size: 20px;
     color: var(--color-text-white);
 }
+.bx-sbb-empty-cart-desc {
+    font-family: var(--font-family);
+    font-weight: 500;
+    color: var(--color-text-white);
+    a {
+        cursor: pointer;
+        transition: color 0.4s ease-in-out;
+
+        &:focus,&:focus-visible {
+            outline: none;
+        }
+
+        &:focus-visible,&:hover,&:active {
+            color: var(--color-background-yellow);
+        }
+    }
+}
