@@ -1,0 +1,94 @@
+.box-double-catalog {
+  margin-bottom: 20px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+
+      .level-3__link {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 135%;
+        color: var(--color-text-white);
+        transition: color 0.4s ease-in-out;
+
+        &:focus,&:focus-visible {
+          outline: none;
+        }
+
+        &:focus-visible,&:hover,&:active {
+          color: var(--color-background-yellow);
+        }
+
+        &.selecd {
+          color: var(--color-background-yellow);
+        }
+      }
+    }
+
+    &.level-2 {
+      padding: 5px;
+      background-color: #4c4a4a;
+    }
+    
+    &.level-3{
+      padding:5px 10px 10px;
+    }
+
+    &.level-2,&.level-3 {
+      display: none;
+    }
+  }
+
+  &__btn-1, &__btn-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 135%;
+    padding: 8px 10px;
+    color: var(--color-text-white);
+    background-color: var(--color-background-card);
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+
+    &:focus,&:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible,&:hover,&:active {
+      color: var(--color-text-black);
+      background-color: var(--color-background-yellow);
+    }
+
+    svg {
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &.active {
+      svg {
+        transform: rotate(180deg);
+      }
+
+      & + .level-2 {
+        display: flex;
+      }
+
+      & + .level-3 {
+        display: flex;
+      }
+    }
+
+    &.selecd {
+      background-color: var(--color-background-yellow);
+      color: var(--color-text-black);
+    }
+  }
+}

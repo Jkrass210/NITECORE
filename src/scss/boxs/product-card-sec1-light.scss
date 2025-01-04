@@ -12,6 +12,10 @@
     border: 1px solid #333;
   }
 
+  &__detailed-info {
+    color: var(--color-text-black);
+  }
+
   &__box-btn-decs {
     p {
       span:first-child {

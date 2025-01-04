@@ -4,6 +4,7 @@ import { updateContent, openMenuLevel1, openMenuLevel2, handleResize, setupMobil
 import { openMenu } from './module/openMenu.js';
 import { testWebP } from './module/testWebP.js'
 import { toggleModal } from './module/toggleModal.js'
+import { newTabs } from './module/newTabs.js'
 
 testWebP(function (support) {
   if (support == true) {
@@ -93,23 +94,35 @@ if (document.querySelector('#swiper-3') && document.querySelector('#swiper-3 > .
   });
 }
 
-if (document.querySelector('#swiper-8') && document.querySelector('#swiper-8 > .swiper-wrapper') && document.querySelectorAll('#swiper-8 > .swiper-slide') && document.querySelector('#swiper-4') && document.querySelector('#swiper-4 > .swiper-wrapper') && document.querySelectorAll('#swiper-4 > .swiper-slide')) {
+if (
+  document.querySelector('#swiper-8') &&
+  document.querySelector('#swiper-8 > .swiper-wrapper') &&
+  document.querySelectorAll('#swiper-8 > .swiper-slide') &&
+  document.querySelector('#swiper-4') &&
+  document.querySelector('#swiper-4 > .swiper-wrapper') &&
+  document.querySelectorAll('#swiper-4 > .swiper-slide')
+) {
   const swiper4 = new Swiper("#swiper-4", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: false,
     reverseDirection: true,
   });
+
   const swiper8 = new Swiper("#swiper-8", {
     slidesPerView: 1,
     spaceBetween: 0,
     freeMode: false,
-
     pagination: {
       el: ".main-sec1__swiper-pagination",
       clickable: true,
     },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false, // Продолжать автоплей после взаимодействия
+    },
   });
+
   swiper4.controller.control = swiper8;
   swiper8.controller.control = swiper4;
 }
@@ -399,6 +412,11 @@ if (document.getElementById('btnScroll')) {
     window.addEventListener('scroll', toggleScrollButton);
   });
 }
+
+if (document.querySelector('.box-double-catalog')){
+  newTabs();
+}
+
 
 
 

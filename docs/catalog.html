@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог</title>
-  <link href="css/normalize.min.css?_v=20241218123135" rel="stylesheet">
-  <link href="css/swiper-bundle.min.css?_v=20241218123135" rel="stylesheet">
-  <link href="css/style.min.css?_v=20241218123135" rel="stylesheet">
+  <link href="css/normalize.min.css?_v=20250104104943" rel="stylesheet">
+  <link href="css/swiper-bundle.min.css?_v=20250104104943" rel="stylesheet">
+  <link href="css/style.min.css?_v=20250104104943" rel="stylesheet">
 
-  <script src="js/swiper-bundle.min.js?_v=20241218123135" defer></script>
-  <script src="js/swiper-bundle.min.js.map?_v=20241218123135" defer></script>
-  <script src="js/fslightbox-min.js?_v=20241218123135" defer></script>
-  <script type="module" src="js/main-min.js?_v=20241218123135"></script>
+  <script src="js/swiper-bundle.min.js?_v=20250104104943" defer></script>
+  <!--<script src="js/swiper-bundle.min.js.map?_v=20250104104943" defer></script>-->
+  <script src="js/fslightbox-min.js?_v=20250104104943" defer></script>
+  <script type="module" src="js/main-min.js?_v=20250104104943"></script>
 </head>
 <body>
   <header class="header" id="header">
@@ -170,6 +170,9 @@
 									<use xlink:href="img/sprite.svg#basket"></use>
 								</svg>
 							</a>
+							<span class="product-counter">
+								10
+							</span>
 						</li>
 					</ul>
 				</div>
@@ -1819,7 +1822,9 @@
         <div class="drop-down-catalog__content-box">
           <div class="drop-down-catalog__box-card">
             <div class="card1">
-  <picture><source srcset="img/main-page/sec2/1.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/1.jpg" alt="img"></picture>
+  <a href="#">
+    <picture><source srcset="img/main-page/sec2/1.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/1.jpg" alt="img"></picture>
+  </a>
   <div class="card1__box-info">
     <h3 class="card1__title">
       ОСВЕЩЕНИЕ
@@ -1843,7 +1848,9 @@
         <div class="drop-down-catalog__content-box">
           <div class="drop-down-catalog__box-card">
             <div class="card1">
-  <picture><source srcset="img/main-page/sec2/2.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/2.jpg" alt="img"></picture>
+  <a href="#">
+    <picture><source srcset="img/main-page/sec2/2.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/2.jpg" alt="img"></picture>
+  </a>
   <div class="card1__box-info">
     <h3 class="card1__title">
       УЛИЧНАЯ ЭЛЕКТРОНИКА
@@ -1867,7 +1874,9 @@
         <div class="drop-down-catalog__content-box">
           <div class="drop-down-catalog__box-card">
             <div class="card1">
-  <picture><source srcset="img/main-page/sec2/3.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/3.jpg" alt="img"></picture>
+  <a href="#">
+    <picture><source srcset="img/main-page/sec2/3.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/3.jpg" alt="img"></picture>
+  </a>
   <div class="card1__box-info">
     <h3 class="card1__title">
       ФОТО ЭЛЕКТРОНИКА
@@ -1891,7 +1900,9 @@
         <div class="drop-down-catalog__content-box">
           <div class="drop-down-catalog__box-card">
             <div class="card1">
-  <picture><source srcset="img/main-page/sec2/4.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/4.jpg" alt="img"></picture>
+  <a href="#">
+    <picture><source srcset="img/main-page/sec2/4.webp" type="image/webp"><img class="card1__img" src="img/main-page/sec2/4.jpg" alt="img"></picture>
+  </a>
   <div class="card1__box-info">
     <h3 class="card1__title">
       АКСЕССУАРЫ
@@ -1939,8 +1950,214 @@
 </div>
     <section class="section catalog-sec1">
       <div class="catalog-sec1__container container">
+        <h1 class="section-title">Каталог</h1>
+        <!--<div class="catalog-sec1__top-line">
+          <ul class="catalog-sec1__top-line-list list-reset">
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для внедорожников
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для квадроциклов
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для лодок, катеров
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для лодок, катеров
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для лодок, катеров
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для лодок, катеров
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      Для лодок, катеров
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+            <li>
+              <div class="btn2">
+  <a class="btn2__link" href="#">
+    <span class="btn2__text">
+      ывапывпывп
+    </span>
+    <span class="btn2__box-svg">
+      <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+        <use xlink:href="img/sprite.svg#arrow"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+
+            </li>
+          </ul>
+        </div>-->
         <div class="catalog-sec1__content">
           <div class="catalog-sec1__aside">
+            <div class="catalog-sec1__box-double-catalog">
+              <div class="box-double-catalog">
+  <ul class="box-double-catalog__list level-1 list-reset">
+    <li class="level-1">
+      <button class="box-double-catalog__btn-1 btn-reset">
+        <span>3453453</span>
+        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <ul class="box-double-catalog__list level-2 list-reset">
+        <li class="level-2">
+          <button class="box-double-catalog__btn-2 btn-reset">
+            <span>3453453</span>
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="box-double-catalog__list level-3 list-reset">
+            <li class="level-3">
+              <a href="#" class="level-3__link">
+                dsfsdgsg
+              </a>
+            </li>
+            <li class="level-3">
+              <a href="#" class="level-3__link">
+                fggnfgnfd
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="level-2">
+          <a href="#" class="box-double-catalog__btn-2">
+            dgdgdg
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="level-1">
+      <button class="box-double-catalog__btn-1 btn-reset">
+        <span>3453453</span>
+        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <ul class="box-double-catalog__list level-2 list-reset">
+        <li class="level-2">
+          <button class="box-double-catalog__btn-2 btn-reset selecd">
+            <span>3453453</span>
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="box-double-catalog__list level-3 list-reset">
+            <li class="level-3">
+              <a href="#" class="level-3__link">
+                dsfsdgsg
+              </a>
+            </li>
+            <li class="level-3">
+              <a href="#" class="level-3__link">
+                fggnfgnfd
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="level-2">
+          <a href="#" class="box-double-catalog__btn-2">
+            dgdgdg
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="level-1">
+      <a href="#" class="box-double-catalog__btn-1">
+        himoop,
+      </a>
+    </li>
+  </ul>
+</div>
+            </div>
             <h3 class="catalog-sec1__title">
               фильтры
             </h3>

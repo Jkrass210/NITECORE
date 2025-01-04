@@ -1,0 +1,22 @@
+.box-double-catalog {
+  &__list {
+    li {
+      .level-3__link {
+        color: var(--color-text-black);
+      }
+    }
+
+    &.level-2 {
+      background-color: #dbdbdb;
+    }
+  }
+
+  &__btn-1, &__btn-2 {
+    color: var(--color-text-black);
+
+    &.selecd {
+      background-color: var(--color-background-yellow);
+      color: var(--color-text-black);
+    }
+  }
+}

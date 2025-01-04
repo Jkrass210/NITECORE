@@ -126,6 +126,15 @@
       color: var(--color-text-white);
     }
 
+    .box-orders__price-old {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 16px;
+      text-decoration: line-through;
+      letter-spacing: -0.05em;
+      color: var(--color-text-card-desc);
+    }
+
     span:last-child {
       font-family: var(--font-family);
       font-weight: 500;
