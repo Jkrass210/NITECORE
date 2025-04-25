@@ -4,18 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты</title>
-  <link href="css/normalize.min.css?_v=20250104104943" rel="stylesheet">
-  <link href="css/swiper-bundle.min.css?_v=20250104104943" rel="stylesheet">
-  <link href="css/style.min.css?_v=20250104104943" rel="stylesheet">
+  <link href="css/normalize.min.css?_v=20250424205617" rel="stylesheet">
+  <link href="css/swiper-bundle.min.css?_v=20250424205617" rel="stylesheet">
+  <link href="css/style.min.css?_v=20250424205617" rel="stylesheet">
 
-  <script src="js/swiper-bundle.min.js?_v=20250104104943" defer></script>
-  <!--<script src="js/swiper-bundle.min.js.map?_v=20250104104943" defer></script>-->
-  <script src="js/fslightbox-min.js?_v=20250104104943" defer></script>
-  <script type="module" src="js/main-min.js?_v=20250104104943"></script>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.className = savedTheme;
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250424205617" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/spritespin@4.0.7/release/spritespin.min.js?_v=20250424205617" defer></script>
+  <script src="js/swiper-bundle.min.js?_v=20250424205617" defer></script>
+  <script src="js/fslightbox-min.js?_v=20250424205617" defer></script>
+  <script type="module" src="js/main-min.js?_v=20250424205617"></script>
 </head>
+
 <body>
-  <header class="header" id="header">
-	<div class="header__top-old">
+  <div id="preloader" class="hidden">
+    <div class="spinner"></div>
+  </div>
+  <header class="header fixed" id="header">
+	<!--<div class="header__top-old">
 		<div class="container header__container">
 			<div class="header__content">
 				<a href="#" class="header__old-link">
@@ -23,7 +32,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div class="header__top">
 		<div class="container header__container">
 			<div class="header__content">
@@ -36,7 +45,7 @@
 							<a href="#">ДОСТАВКА</a>
 						</li>
 						<li>
-							<a href="#">О&nbsp;НАС</a>
+							<a href="about-us.html">О&nbsp;НАС</a>
 						</li>
 						<li>
 							<a href="#">ГАРАНТИЯ</a>
@@ -52,7 +61,7 @@
 				<div class="header__group-link">
 					<div class="switcher">
   <label class="switcher__label">
-    <input class="switcher__input" type="checkbox">
+    <input class="switcher__input" type="checkbox" id="theme-toggle">
     <span class="switcher__status"></span>
   </label>
 </div>
@@ -92,7 +101,7 @@
 				<div class="header__box-left">
 					<div class="logo">
   <a href="#" class="logo__link">
-    <picture><source srcset="img/header/logo.webp" type="image/webp"><img src="img/header/logo.png" alt="ligo"></picture>
+    <img src="img/header/logo.svg" alt="ligo">
   </a>
 </div>
 					<button class="header__burger btn-reset" id="burgerMenu">
@@ -101,17 +110,20 @@
 						<span></span>
 					</button>
 					<div class="header__box-search">
-						<button href="#" class="btn-catalog btn-reset" id="dropCatalog">
-  <span class="btn-catalog__icon">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-  <span class="btn-catalog__text">
-    КАТАЛОГ
-  </span>
-</button>
+						<div class="btn-catalog-wrapp">
+  <button href="#" class="btn-catalog btn-reset" id="dropCatalog">
+    <span class="btn-catalog__icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <span class="btn-catalog__text">
+      КАТАЛОГ
+    </span>
+  </button>
+</div>
+
 						<form class="search" action="#" method="post">
   <input class="search__input" type="text" id="search" placeholder="поиск">
   <button class="search__submit btn-reset">
@@ -152,10 +164,13 @@
 						</li>
 						<li>
 							<a href="#">
-								<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<svg width="19" height="19" viewBox="0 0 19 19" fill="none">
 									<use xlink:href="img/sprite.svg#111"></use>
 								</svg>
 							</a>
+							<span class="product-counter">
+								0
+							</span>
 						</li>
 						<li>
 							<a href="#">
@@ -163,6 +178,7 @@
 									<use xlink:href="img/sprite.svg#like"></use>
 								</svg>
 							</a>
+							<span class="product-counter">0</span>
 						</li>
 						<li>
 							<a href="#">
@@ -184,10 +200,10 @@
     <div class="drop-down-catalog__menu">
       <ul class="drop-down-catalog__list list-reset">
         <li class="drop-down-catalog__item">
-          <button class="drop-down-catalog__btn btn-reset">
+          <a href="#" class="drop-down-catalog__btn btn-reset">
             <img src="img/drop-down-catalog/1.svg" alt="img">
             <span>Освещение</span>
-          </button>
+          </a>
           <div class="drop-down-catalog__content">
             <div class="drop-down-catalog__content-wrapp">
               <div class="drop-down-catalog__content-level-1">
@@ -676,10 +692,10 @@
           </div>
         </li>
         <li class="drop-down-catalog__item">
-          <button class="drop-down-catalog__btn btn-reset">
+          <a class="drop-down-catalog__btn btn-reset">
             <img src="img/drop-down-catalog/2.svg" alt="img">
             <span>Сумки</span>
-          </button>
+          </a>
           <div class="drop-down-catalog__content">
             <div class="drop-down-catalog__content-wrapp">
               <div class="drop-down-catalog__content-level-1">
@@ -1124,10 +1140,10 @@
           </div>
         </li>
         <li class="drop-down-catalog__item">
-          <button class="drop-down-catalog__btn btn-reset">
+          <a class="drop-down-catalog__btn btn-reset">
             <img src="img/drop-down-catalog/3.svg" alt="img">
             <span>Внешний аккумулятор</span>
-          </button>
+          </a>
           <div class="drop-down-catalog__content">
             <div class="drop-down-catalog__content-wrapp">
               <div class="drop-down-catalog__content-level-1">
@@ -2041,7 +2057,7 @@
       <div class="footer__content">
         <div class="logo">
   <a href="#" class="logo__link">
-    <picture><source srcset="img/header/logo.webp" type="image/webp"><img src="img/header/logo.png" alt="ligo"></picture>
+    <img src="img/header/logo.svg" alt="ligo">
   </a>
 </div>
         <div class="footer__group-link">

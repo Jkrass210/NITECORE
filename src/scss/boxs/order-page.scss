@@ -11,7 +11,7 @@
         font-weight: 500;
         font-size: 20px;
         letter-spacing: 0.03em;
-        color: var(--color-text-white);
+        color: var(--p-text);
 
         .bx-soa-cart-d {
           font-size: 24px;
@@ -33,7 +33,7 @@
         font-weight: 500;
         font-size: 20px;
         letter-spacing: 0.03em;
-        color: var(--color-text-white);
+        color: var(--p-text);
 
         .bx-soa-cart-d {
           font-size: 24px;
@@ -110,7 +110,7 @@
           font-weight: 500;
           font-size: 20px;
           letter-spacing: 0.03em;
-          color: var(--color-text-white);
+          color: var(--p-text);
         }
       }
 
@@ -123,14 +123,14 @@
           font-weight: 400;
           font-size: 14px;
           line-height: 150%;
-          color: var(--color-text-white);
+          color: var(--p-text);
         }
       }
     }
 
     .dropdown-block {
       min-height: 33px;
-      border: 1px solid var(--colir-background-body);
+      border: 1px solid var(--body);
       background-color: var(--color-background-card);
 
       .bx-ui-sls-fake {
@@ -143,9 +143,10 @@
 
     .bx-soa-tooltip.bx-soa-tooltip-danger .tooltip-inner {
       font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 14px;
-      color: #A94442;
+      font-weight: 500;
+      font-size: 16px;
+      color: #f72e2a;
+      background: transparent;
     }
 
     .bx-soa-reference {
@@ -184,9 +185,9 @@
     }
 
     .bx-soa-pp-desc-container .bx-soa-pp-company {
-      color: var(--color-text-white);
+      color: var(--p-text);
       border: none;
-      background-color: var(--colir-background-body);
+      background-color: var(--body);
     }
 
     .bx-soa-pp-list-termin {
@@ -194,14 +195,14 @@
       font-weight: 400;
       font-size: 12px;
       margin-bottom: 5px;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
 
     .bx-soa-pp-list-description {
       font-family: var(--font-family);
       font-weight: 700;
       font-size: 16px;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
 
     .bx-soa-customer-field, .bx-soa-location-input-container {
@@ -211,17 +212,17 @@
         font-family: var(--third-family);
         font-weight: 500;
         font-size: 16px;
-        color: var(--color-text-white);
+        color: var(--p-text);
       }
       input {
         padding: 10px;
         width: 100%;
-        border: 1px solid var(--colir-background-body);
+        border: 1px solid var(--body);
         background-color: var(--color-background-card);
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 16px;
-        color: var(--color-text-white);
+        color: var(--p-text);
         transition: border-color 0.4s ease-in-out;
 
         &:focus,
@@ -240,12 +241,12 @@
         min-height: 84px;
         width: 100%;
         padding: 10px;
-        border: 1px solid var(--colir-background-body);
+        border: 1px solid var(--body);
         background-color: var(--color-background-card);
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 16px;
-        color: var(--color-text-white);
+        color: var(--p-text);
         transition: border-color 0.4s ease-in-out;
 
         &:focus,
@@ -284,7 +285,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 159%;
-        color: var(--color-text-white);
+        color: var(--p-text);
         transition: color 0.4s ease-in-out;
 
         &:focus,
@@ -302,6 +303,22 @@
   }
 }
 
+.light {
+  .bx-soa-item-td-text .bx-price {
+    color: var(--color-text-black);
+  }
+  .order-page-container #bx-soa-order .bx-soa-reference {
+    color: var(--color-text-black);
+  }
+  .bx-soa-pp-company-smalltitle {
+    color: var(--color-text-black);
+  }
+}
+
+.bx-soa-cart-total.bx-soa-cart-total-fixed {
+  top: 190px;
+}
+
 @media (max-width: 1200px) {
   .order-page-container {
     #bx-soa-order {
@@ -313,9 +330,18 @@
 }
 
 @media (max-width: 1030px) {
+  .bx-soa-cart-total.bx-soa-cart-total-bottom{
+    opacity: 1;
+  }
+  .bx-soa-cart-total.bx-soa-cart-total-fixed {
+    position: static;
+  }
+  .bx-soa-cart-total-ghost {
+    padding-top: 0 !important;
+  }
   .order-page-container {
     #bx-soa-order {
-      flex-direction: column-reverse;
+      flex-direction: column;
 
       .bx-soa-cart-total.bx-soa-cart-total-fixed {
         position: static;

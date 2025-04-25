@@ -28,7 +28,7 @@
       font-size: 12px;
       line-height: 100%;
       text-transform: uppercase;
-      color: var(--color-text-path);
+      color: var(--card-desc--path);
       transition: color 0.4s ease-in-out;
     }
 
@@ -40,7 +40,10 @@
     a:focus-visible,
     a:hover,
     a:active {
-      color: var(--color-background-card);
+      color: var(--color-background-yellow);
+      span {
+        color: var(--color-background-yellow);
+      }
     }
 
     span {

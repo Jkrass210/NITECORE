@@ -1,12 +1,14 @@
 .btn-catalog {
-  border: 1px solid var(--color-text-white);
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  background-color: var(--color-text-white);
+  background-color: var(--p-text);
   transition: background-color 0.4s ease-in-out;
+  &-wrapp {
+    border: 1px solid var(--p-text);
+  }
   &:focus,
   &:focus-visible {
     outline: none;
@@ -18,26 +20,26 @@
     .btn-catalog__icon {
       span {
         transform: scale(1.5);
-        background-color: var(--color-background-yellow);
+        background-color: var(--yellow-white);
       }
     }
     .btn-catalog__text {
-      color: var(--color-background-yellow);
+      color: var(--yellow-white);
     }
-    background-color: var(--color-text-black);
+    background-color: var(--black-gray);
   }
 
   &.active {
     .btn-catalog__icon {
       span {
         transform: scale(1.5);
-        background-color: var(--color-background-yellow);
+        background-color: var(--yellow-white);
       }
     }
     .btn-catalog__text {
-      color: var(--color-background-yellow);
+      color: var(--yellow-white);
     }
-    background-color: var(--color-text-black);
+    background-color: var(--black-gray);
   }
 
   &__icon {
@@ -53,7 +55,7 @@
       width: 3px;
       min-width: 3px;
       height: 3px;
-      background-color: var(--color-text-black);
+      background-color: var(--black-white);
       transition: background-color 0.4s ease-in-out, transform 0.5s ease-in-out;
     }
 
@@ -69,7 +71,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: color 0.4s ease-in-out;
-    color: var(--color-text-black);
+    color: var(--black-white);
   }
 }
 

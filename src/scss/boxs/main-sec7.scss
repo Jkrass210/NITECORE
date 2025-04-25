@@ -13,7 +13,7 @@
     font-size: 16px;
     text-decoration: underline;
     text-decoration-skip-ink: none;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-desc);
     transition: color 0.4s ease-in-out;
 
     &:focus,
@@ -39,10 +39,6 @@
 @media (max-width: 669px) {
   .main-sec7 {
     padding: 60px 0 52px;
-
-    &__link {
-      display: none;
-    }
 
     &__list {
       grid-template-columns: 1fr;

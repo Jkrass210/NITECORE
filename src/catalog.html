@@ -2,12 +2,23 @@
 <html lang="ru">
 @@include('html/components/head.html',{"title":"Каталог"})
 <body>
+  <div id="preloader" class="hidden">
+    <div class="spinner"></div>
+  </div>
   @@include('html/boxs/header.html')
   <main class="main">
     @@include('html/components/path.html',{"text":"Каталог"})
     <section class="section catalog-sec1">
       <div class="catalog-sec1__container container">
-        <h1 class="section-title">Каталог</h1>
+        <div class="catalog-sec1__main-title-box">
+          <h1 class="section-title">Каталог</h1>
+          <button class="catalog-sec1__title-btn btn-reset" id="openFilter1">
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        
         <!--<div class="catalog-sec1__top-line">
           <ul class="catalog-sec1__top-line-list list-reset">
             <li>
@@ -38,12 +49,19 @@
         </div>-->
         <div class="catalog-sec1__content">
           <div class="catalog-sec1__aside">
-            <div class="catalog-sec1__box-double-catalog">
+            <div class="catalog-sec1__box-double-catalog" data-filter-for-1="openFilter1">
               @@include('html/boxs/box-double-catalog.html')
             </div>
-            <h3 class="catalog-sec1__title">
-              фильтры
-            </h3>
+            <div class="catalog-sec1__title-wrapp">
+              <h3 class="catalog-sec1__title">
+                фильтры
+              </h3>
+              <button class="catalog-sec1__title-btn btn-reset" id="openFilter">
+                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
             @@include('html/boxs/filters.html')
           </div>
           <div class="catalog-sec1__products">
@@ -51,6 +69,8 @@
             <ul class="catalog-sec1__products-list list-reset">
               <li>
                 @@include('html/components/card3.html',{"urlImg":"img/main-page/sec4/1.png","text1":"Аккумулятор","textStrong":"NITECORE NL1834","text2":"18650 3.7v 3400mA","textSize":"1*21700/1*18650/2*RC123","idInput":"comparison1","text":"В сравнении"})
+
+                @@include('html/boxs/modal-product-order.html')
               </li>
               <li>
                 @@include('html/components/card3.html',{"urlImg":"img/main-page/sec4/2.png","text1":"Налобный фонарь","textStrong":"NITECORE HC35","text2":"4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м","textSize":"1*21700/1*18650/2*RC123","idInput":"comparison2","text":"В сравнении"})

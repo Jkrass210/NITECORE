@@ -1,11 +1,14 @@
 .personal-data {
+  h3 {
+    color: var(--p-text);
+  }
   &__desc-wrapp {
     margin-bottom: 40px;
     p {
       font-family: var(--font-family);
       font-weight: 500;
       font-size: 16px;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
   }
 
@@ -20,6 +23,10 @@
     flex-direction: column;
     gap: 20px;
 
+    small {
+      color: var(--p-text) !important;
+    }
+
     li {
       display: flex;
       justify-content: space-between;
@@ -32,7 +39,7 @@
         font-family: var(--font-family);
         font-weight: 500;
         font-size: 20px;
-        color: var(--color-text-white);
+        color: var(--p-text);
       }
 
       textarea {
@@ -43,12 +50,12 @@
       input,textarea {
         padding: 10px;
         flex: 1;
-        border: 1px solid var(--colir-background-body);
+        border: 1px solid var(--body);
         background-color: var(--color-background-card);
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 16px;
-        color: var(--color-text-white);
+        color: var(--p-text);
         transition: border-color 0.4s ease-in-out;
 
         &:focus,
@@ -78,7 +85,7 @@
     font-size: 16px;
     text-align: center;
     color: var(--color-text-black);
-    border: 1px solid var(--colir-background-body);
+    border: 1px solid var(--body);
     background-color: var(--color-background-yellow);
     transition: border-color 0.4s ease-in-out;
 
@@ -102,7 +109,7 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-align: center;
-    color: var(--color-text-white);
+    color: var(--p-text);
     transition: background-color 0.4s ease-in-out;
 
     &:focus,

@@ -75,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--colir-background-body);
+    background-color: var(--body);
     width: 150px;
     min-width: 150px;
     height: 150px;
@@ -86,11 +86,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 124px;
-      min-width: 124px;
-      height: 124px;
+      width: 120px;
+      min-width: 120px;
+      height: 120px;
+      border: 2px solid var(--body);
       border-radius: 100%;
       background-color: var(--color-background-yellow);
+      transition: border-color 0.4s ease-in-out;
 
       &:focus,
       &:focus-visible {
@@ -100,7 +102,7 @@
       &:hover,
       &:focus-visible,
       &:active {
-        outline: 2px solid var(--color-background-yellow);
+        border-color: var(--color-background-yellow);
       }
     }
   }

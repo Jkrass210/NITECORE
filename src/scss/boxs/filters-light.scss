@@ -4,4 +4,17 @@
       color: var(--color-text-black);
     }
   }
+  .smart-filter-block {
+    input {
+      color: var(--color-text-black);
+    }
+  }
+  .smart-filter-slider-ruler {
+    span {
+      color: var(--color-text-black);
+    }
+  }
+  .smart-filter-slider-handle {
+    background-color: var(--color-text-black);
+  }
 }

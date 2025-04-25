@@ -27,7 +27,7 @@
       font-size: 20px;
       line-height: 60%;
       text-transform: uppercase;
-      color: var(--color-background-yellow);
+      color: var(--yellow-black);
     }
 
     p:last-child {
@@ -36,7 +36,7 @@
       font-size: 20px;
       line-height: 60%;
       text-transform: uppercase;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
   }
 
@@ -44,7 +44,7 @@
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 16px;
-    color: var(--color-text-card-desc);
+    color: var(--price-old);
   }
 
   &__right {

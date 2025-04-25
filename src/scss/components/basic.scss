@@ -32,7 +32,7 @@ body {
   height: 100vh;
   min-width: 340px;
   font-family: "Gilroy", sans-serif;
-  background-color: #212121;
+  background-color: var(--body);
   transition: background-color 0.4s ease-in-out;
 }
 
@@ -102,8 +102,6 @@ body {
   --colir-background-body: #212121;
   --colir-border-marker: #323232;
   --color-switcher: #2e2e2e;
-  --color-background-card: #353535;
-  --color-background-path: #151515;
   --color-background-menu1: #121212;
   --color-text-path: #555;
   --color-btn-gray3: #292929;
@@ -114,6 +112,87 @@ body {
   --color-text-green: #36d96f;
   --color-text-orange: #ff8c00;
   --color-background-menu2: #0d0c0c;
+
+
+
+  --body: #212121;
+  --black-white: #000;
+  --black-gray: #000;
+  --p-text: #fff;
+  --color-background-card: #353535;
+  --card-black: #353535;
+  --card-yellow: #353535;
+  --link-1: #ffe100;
+  --level-2: #4c4a4a;
+  --price-old: rgba(255, 255, 255, 0.6);
+  --yellow-black: #ffe100;
+  --yellow-gray: #ffe100;
+  --yellow-white: #ffe100;
+  --white-yellow: #fff;
+  --content-box-hover: #212121;
+  --content-level-2: #0d0c0c;
+  --content-level-2-link: rgba(255, 255, 255, 0.6);
+  --filter: invert(35%) sepia(96%) saturate(648%) hue-rotate(1deg) brightness(102%) contrast(101%);
+  --filter-2: invert(35%) sepia(96%) saturate(648%) hue-rotate(1deg) brightness(102%) contrast(101%);
+  --color-desc: rgba(255, 255, 255, 0.8);
+  --gray-card: #292929;
+  --path-yellow: #555;
+  --white-path: #fff;
+  --gray-gray: #353535;
+  --transparent-gray: transparent;
+  --transparent-yellow: transparent;
+  --color-background-path: #151515;
+  --drop-down1: rgba(255, 255, 255, 0.6);
+  --gray3-csrd: #333;
+  --filter-3: none;
+  --card-desc--path: rgba(255, 255, 255, 0.6);
+  --line: #000;
+  --img: url(../img/main-page/sec1/beac1.png);
+  --img-small: url("../img/main-page/sec1/beac1(340).png");
+  --color-double-catalog: #4c4a4a;
+}
+
+
+.light {
+  --body: #fff;
+  --black-white: #fff;
+  --black-gray: #383838;
+  --yellow-white: #fff;
+  --p-text: #000;
+  --color-background-card: #f5f5f5;
+  --card-black: #000;
+  --card-yellow: #ffe100;
+  --link-1: #353535;
+  --level-2: #dbdbdb;
+  --price-old: #383838;
+  --yellow-black: #000;
+  --yellow-gray: #383838;
+  --yellow-white: #fff;
+  --white-yellow: #ffe100;
+  --content-box-hover: #dcdcdc;
+  --content-level-2: #e8e8e8;
+  --content-level-2-link: rgba(0, 0, 0, 0.6);
+  --filter: brightness(1.5);
+  --filter-2: brightness(0);
+  --color-desc: rgba(0, 0, 0, 0.8);
+  --gray-card: #f5f5f5;
+  --path-yellow: #ffe100;
+  --white-path: #555;
+  --gray-gray: #212121;
+  --transparent-gray: #212121;
+  --transparent-yellow: #ffe100;
+  --color-background-path: #e8e8e8;
+  --drop-down1: #333;
+  --gray3-csrd: #f5f5f5;
+  --filter-3: invert(1) brightness(0);
+  --card-desc--path: #555;
+  --line: #e7e7e7;
+  --img: url(../img/main-page/sec1/beac1-light.png);
+  --img-small: url("../img/main-page/sec1/beac1(340)-light.png");
+  --color-background-menu1: #f3f3f3;
+  --colir-border-marker: #d9d9d9;
+  --color-switcher: #fff;
+  --color-double-catalog: #d5d5d5;
 }
 
 .fslightbox-slide-number-container {

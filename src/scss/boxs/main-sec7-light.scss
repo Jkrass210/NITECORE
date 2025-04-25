@@ -1,0 +1,11 @@
+.main-sec7 {
+  &__link {
+    color: var(--color-text-black);
+
+    &:focus-visible,
+    &:hover,
+    &:active {
+      color: var(--color-text-gray);
+    }
+  }
+}

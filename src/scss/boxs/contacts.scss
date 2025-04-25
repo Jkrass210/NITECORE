@@ -8,7 +8,7 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 120%;
-    color: var(--color-text-white);
+    color: var(--p-text);
   }
 
   &__info {
@@ -74,7 +74,7 @@
     font-weight: 800;
     font-size: 32px;
     letter-spacing: .03em;
-    color: var(--color-text-white);
+    color: var(--p-text);
   }
 
   &__form.personal-data__form {

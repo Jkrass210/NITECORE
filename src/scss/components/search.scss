@@ -1,5 +1,5 @@
 .search {
-  border: 1px solid var(--color-text-white);
+  border: 1px solid var(--p-text);
   display: flex;
 
   &__input {
@@ -11,7 +11,7 @@
     font-size: 14px;
     line-height: 0;
     letter-spacing: 0.05em;
-    color: var(--color-text-white);
+    color: var(--p-text);
     background-color: transparent;
 
     &:focus,
@@ -49,6 +49,14 @@
     &__input {
       min-width: auto;
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 669px) {
+  .search {
+    &__input {
+      padding: 6px 17px;
     }
   }
 }

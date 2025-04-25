@@ -17,7 +17,7 @@
       font-weight: 500;
       font-size: 14px;
       letter-spacing: 0.03em;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
 
     .search__input {
@@ -40,7 +40,7 @@
     font-weight: 500;
     font-size: 24px;
     letter-spacing: 0.03em;
-    color: var(--color-text-white);
+    color: var(--p-text);
   }
 
   &__price-wrapp {
@@ -54,7 +54,7 @@
     font-weight: 500;
     font-size: 48px;
     letter-spacing: 0.03em;
-    color: var(--color-text-white);
+    color: var(--p-text);
   }
 }
 

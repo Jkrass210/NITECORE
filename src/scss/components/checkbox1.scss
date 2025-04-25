@@ -17,7 +17,8 @@
   }
 
   &__input:checked ~ .checkbox1__box {
-    border-color: var(--color-background-yellow);
+    border-color: var(--yellow-black);
+    background-color: var(--transparent-yellow);
 
     svg {
       opacity: 1;
@@ -28,7 +29,7 @@
     width: 16px;
     min-width: 16px;
     height: 16px;
-    border: 1px solid var(--color-text-white);
+    border: 1px solid var(--p-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,6 +38,9 @@
     svg {
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
+      path {
+        stroke: var(--p-text);
+      }
     }
   }
 
@@ -44,6 +48,6 @@
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 14px;
-    color: var(--color-text-white);
+    color: var(--p-text);
   }
 }

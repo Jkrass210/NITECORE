@@ -2,16 +2,23 @@
 <html lang="ru">
   @@include('html/components/head.html',{"title":"Карточка товара"})
 <body>
+  <div id="preloader" class="hidden">
+    <div class="spinner"></div>
+  </div>
   @@include('html/boxs/header.html')
   <main class="main">
     @@include('html/components/path1.html',{"text":"Каталог","text1":"Аккумулятор NITECORE NL1834 18650 3.7v 3400mA"})
     <section class="section product-card-sec1">
+      @@include('html/boxs/box-product-line.html')
       <div class="product-card-sec1__container container">
         <div class="product-card-sec1__content">
           <div class="product-card-sec1__box-left">
             <div class="product-card-sec1__box-left-wrapp">
               <div class="product-card-sec1__swiper swiper swiper-5" id="swiper-5">
                 <ul class="product-card-sec1__swiper-wrapper swiper-wrapper swiper-wrapper-5 list-reset">
+                  <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-5">
+                    <div id="productViewer"></div>
+                  </li>
                   <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-5">
                     <a data-fslightbox="gallery" href="img/main-page/sec4/1.png">
                       <span class="product-card-sec1__box-img">
@@ -66,6 +73,21 @@
                   <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-6">
                     <div class="product-card-sec1__box-img">
                       <img src="img/main-page/sec4/2.png" alt="img">
+                    </div>
+                  </li>
+                  <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-6">
+                    <div class="product-card-sec1__box-img">
+                      <img src="img/main-page/sec4/3.png" alt="img">
+                    </div>
+                  </li>
+                  <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-6">
+                    <div class="product-card-sec1__box-img">
+                      <img src="img/main-page/sec4/3.png" alt="img">
+                    </div>
+                  </li>
+                  <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-6">
+                    <div class="product-card-sec1__box-img">
+                      <img src="img/main-page/sec4/3.png" alt="img">
                     </div>
                   </li>
                   <li class="product-card-sec1__swiper-slide swiper-slide swiper-slide-6">
@@ -153,6 +175,23 @@
                   </div>
                 </div>
               </div>
+              <ul class="product-card-sec1__new-list list-reset">
+                <li>
+                  <a href="#" target="_blank">
+                    <img src="" alt="img">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <img src="" alt="img">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <img src="" alt="img">
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="product-card-sec1__equipment">
               <p class="product-card-sec1__equipment-desc">
@@ -256,18 +295,7 @@
             <div class="product-card-sec1__box-content" data-window-id="switchingVideo">
               <ul class="product-card-sec1__box-content-list list-reset">
                 <li>
-                  <video controls muted preload="auto" playsinline>
-                    <source src="video/video.mp4" type="video/mp4">
-                    <source src="video/video1.webm" type="video/webm">
-                    Ваш браузер не поддерживает видео.
-                  </video>
-                </li>
-                <li>
-                  <video controls muted preload="auto" playsinline>
-                    <source src="video/video.mp4" type="video/mp4">
-                    <source src="video/video1.webm" type="video/webm">
-                    Ваш браузер не поддерживает видео.
-                  </video>
+                  <iframe src="https://vk.com/video_ext.php?oid=-73528734&id=456239160" allow="fullscreen; encrypted-media; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                 </li>
                 <li>
                   <video controls muted preload="auto" playsinline>

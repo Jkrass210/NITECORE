@@ -13,6 +13,7 @@
     img {
       max-width: 235px;
       height: 22px;
+      filter: var(--filter-3);
     }
 
     &:focus,
@@ -21,7 +22,18 @@
     }
 
     &:focus-visible {
-      outline: 1px solid var(--color-background-yellow);
+      outline: 1px solid var(--yellow-black);
+    }
+  }
+}
+.light{
+  .footer {
+    .logo {
+      &__link {
+        img {
+          filter: none;
+        }
+      }
     }
   }
 }

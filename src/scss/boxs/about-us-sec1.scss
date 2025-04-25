@@ -35,7 +35,7 @@
       font-weight: 400;
       font-size: 15px;
       line-height: 120%;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
   }
 
@@ -44,7 +44,7 @@
     font-weight: 800;
     font-size: 32px;
     letter-spacing: 0.03em;
-    color: var(--color-text-white);
+    color: var(--p-text);
     margin-bottom: 40px;
   }
 
@@ -74,7 +74,7 @@
       font-weight: 400;
       font-size: 15px;
       line-height: 120%;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
   }
 
@@ -97,7 +97,7 @@
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.03em;
-    color: var(--color-background-yellow);
+    color: var(--link-1);
     background-color: var(--color-background-card);
     transition: background-color 0.4s ease-in-out;
 

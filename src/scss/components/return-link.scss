@@ -1,0 +1,17 @@
+.return-link {
+  padding-top: 20px;
+  a {
+    display: inline-block;
+    padding: 20px;
+    color: var(--color-text-black);
+    background-color: var(--color-background-yellow);
+    transition: color 0.4s ease-in-out;
+
+    &:focus,&:focus-visible {
+      outline: none;
+    }
+    &:focus-visible,&:hover,&:active {
+      color: var(--color-text-white);
+    }
+  }
+}

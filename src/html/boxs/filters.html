@@ -1,8 +1,13 @@
-<div class="filters">
+<div class="filters" data-filter-for="openFilter">
   <form action="#" method="post">
     <ul class="filters__main-list list-reset">
       <li class="filters__main-item">
-        <p>Люмены</p>
+        <button class="btn-reset filters-btn-tabs">
+          <span>Люмены</span>
+          <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
         <ul class="list-reset">
           <li>
             @@include('../components/checkbox3.html',{"idInput":"lumensAll","text":"Все"})
@@ -22,7 +27,12 @@
         </ul>
       </li>
       <li class="filters__main-item">
-        <p>Цвет луча</p>
+        <button class="btn-reset filters-btn-tabs">
+          <span>Цвет луча</span>
+          <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6.00081 5.58L11 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
         <ul class="list-reset">
           <li>
             @@include('../components/checkbox3.html',{"idInput":"colorAll","text":"Все"})

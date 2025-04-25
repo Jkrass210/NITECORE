@@ -4,14 +4,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  border: 1px solid var(--color-background-yellow);
+  border: 1px solid var(--yellow-black);
 
   & button {
     height: 33px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-background-yellow);
+    color: var(--yellow-black);
     transition: color 0.4s ease-in-out;
 
     &:focus,
@@ -41,7 +41,7 @@
       font-family: var(--font-family);
       font-weight: 400;
       font-size: 14px;
-      color: var(--color-background-yellow);
+      color: var(--yellow-black);
 
       &:focus, &:focus-visible {
         outline: none;

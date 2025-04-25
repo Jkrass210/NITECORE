@@ -1,6 +1,6 @@
 .drop-down-catalog {
   position: absolute;
-  z-index: -1;
+  z-index: 10;
   width: 100%;
   transform: translateY(-150%);
   visibility: hidden;
@@ -73,16 +73,20 @@
   &__content-box {
     border-right: 1px solid transparent;
     transition: background-color .4s ease-in-out, border-color .4s ease-in-out;
+    /*&:has(.drop-down-catalog__btn-2){
+      background-color: var(--content-box-hover);
+      border-color: var(--yellow-black);
+    }*/
 
     &:hover {
-      background-color: var(--colir-background-body);
-      border-color: var(--color-background-yellow);
+      background-color: var(--content-box-hover);
+      border-color: var(--yellow-black);
     }
   }
 
   &__content-box.hovered-2, &__content-box.hovered{
-    background-color: var(--colir-background-body);
-    border-color: var(--color-background-yellow);
+    background-color: var(--content-box-hover);
+    border-color: var(--yellow-black);
   }
 
   &__content-level-2 {
@@ -92,7 +96,7 @@
     padding-bottom: 60px;
     display: flex;
     flex: 1;
-    background-color: var(--color-background-menu2);
+    background-color: var(--content-level-2);
 
     ul {
       display: flex;
@@ -110,7 +114,7 @@
           font-weight: 400;
           font-size: 14px;
           line-height: 200%;
-          color: var(--color-text-card-desc);
+          color: var(--content-level-2-link);
           transition: color 0.4s ease-in-out;
 
           &:focus,
@@ -121,7 +125,7 @@
           &:focus-visible,
           &:hover,
           &:active {
-            color: var(--color-background-yellow);
+            color: var(--yellow-black);
           }
         }
       }
@@ -136,18 +140,25 @@
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 14px;
-    color: var(--color-text-white);
+    color: var(--p-text);
+    border-right: 1px solid transparent;
+    transition: background-color .4s ease-in-out, border-color .4s ease-in-out;
 
     span {
       padding-top: 5px;
       display: block;
       font-size: 12px;
-      color: var(--color-text-card-desc);
+      color: var(--content-level-2-link);
     }
 
     &:focus,
     &:focus-visible {
       outline: none;
+    }
+
+    &:focus-visible,&:hover,&:active {
+      background-color: var(--content-box-hover);
+      border-color: var(--yellow-black);
     }
   }
 
@@ -165,14 +176,18 @@
     justify-content: flex-start;
     padding-left: 315px;
     border-right: 1px solid transparent;
-    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out; 
+    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+    &:has(.drop-down-catalog__btn:hover) {
+      background-color: var(--content-box-hover);
+      border-color: var(--yellow-black);
+    }
 
     &.hovered {
-      background-color: var(--colir-background-body);
-      border-color: var(--color-background-yellow);
+      background-color: var(--content-box-hover);
+      border-color: var(--yellow-black);
 
       .drop-down-catalog__btn {
-        filter: invert(35%) sepia(96%) saturate(648%) hue-rotate(1deg) brightness(102%) contrast(101%);
+        filter: var(--filter);
       }
     }
   }
@@ -194,7 +209,7 @@
     &:hover,
     &:focus-visible,
     &:active {
-      filter: invert(35%) sepia(96%) saturate(648%) hue-rotate(1deg) brightness(102%) contrast(101%);
+      filter: var(--filter-2);
     }
 
     span {
@@ -202,7 +217,7 @@
       font-family: var(--font-family);
       font-weight: 500;
       font-size: 16px;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
   }
 
@@ -244,6 +259,17 @@
   &__content {
     display: none;
   }
+}
+
+.light{
+  .drop-down-catalog {
+    &__btn {
+      img {
+        filter: invert(1) brightness(0);
+      }
+    }
+  }
+  
 }
 
 @-moz-document url-prefix() {
@@ -322,17 +348,18 @@
       padding: 10px;
       ul {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        //grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 10px;
         li {
-          text-align: center;
-
+          //text-align: center;
+          padding-left: 20px;
           a {
             font-family: var(--font-family);
             font-weight: 400;
             font-size: 14px;
             line-height: 200%;
-            color: var(--color-text-card-desc);
+            color: var(--content-level-2-link);
             transition: color 0.4s ease-in-out;
 
             &:focus, &:focus-visible {
@@ -340,7 +367,7 @@
             }
 
             &:hover, &:focus-visible, &:active {
-              color: var(--color-background-yellow);
+              color: var(--yellow-black);
             }
           }
         }

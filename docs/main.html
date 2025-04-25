@@ -4,18 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная страница - NITECORE</title>
-  <link href="css/normalize.min.css?_v=20250104104943" rel="stylesheet">
-  <link href="css/swiper-bundle.min.css?_v=20250104104943" rel="stylesheet">
-  <link href="css/style.min.css?_v=20250104104943" rel="stylesheet">
+  <link href="css/normalize.min.css?_v=20250424205617" rel="stylesheet">
+  <link href="css/swiper-bundle.min.css?_v=20250424205617" rel="stylesheet">
+  <link href="css/style.min.css?_v=20250424205617" rel="stylesheet">
 
-  <script src="js/swiper-bundle.min.js?_v=20250104104943" defer></script>
-  <!--<script src="js/swiper-bundle.min.js.map?_v=20250104104943" defer></script>-->
-  <script src="js/fslightbox-min.js?_v=20250104104943" defer></script>
-  <script type="module" src="js/main-min.js?_v=20250104104943"></script>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.className = savedTheme;
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250424205617" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/spritespin@4.0.7/release/spritespin.min.js?_v=20250424205617" defer></script>
+  <script src="js/swiper-bundle.min.js?_v=20250424205617" defer></script>
+  <script src="js/fslightbox-min.js?_v=20250424205617" defer></script>
+  <script type="module" src="js/main-min.js?_v=20250424205617"></script>
 </head>
+
 <body>
-  <header class="header" id="header">
-	<div class="header__top-old">
+  <div id="preloader" class="hidden">
+    <div class="spinner"></div>
+  </div>
+  <header class="header fixed" id="header">
+	<!--<div class="header__top-old">
 		<div class="container header__container">
 			<div class="header__content">
 				<a href="#" class="header__old-link">
@@ -23,7 +32,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div class="header__top">
 		<div class="container header__container">
 			<div class="header__content">
@@ -36,7 +45,7 @@
 							<a href="#">ДОСТАВКА</a>
 						</li>
 						<li>
-							<a href="#">О&nbsp;НАС</a>
+							<a href="about-us.html">О&nbsp;НАС</a>
 						</li>
 						<li>
 							<a href="#">ГАРАНТИЯ</a>
@@ -52,7 +61,7 @@
 				<div class="header__group-link">
 					<div class="switcher">
   <label class="switcher__label">
-    <input class="switcher__input" type="checkbox">
+    <input class="switcher__input" type="checkbox" id="theme-toggle">
     <span class="switcher__status"></span>
   </label>
 </div>
@@ -92,7 +101,7 @@
 				<div class="header__box-left">
 					<div class="logo">
   <a href="#" class="logo__link">
-    <picture><source srcset="img/header/logo.webp" type="image/webp"><img src="img/header/logo.png" alt="ligo"></picture>
+    <img src="img/header/logo.svg" alt="ligo">
   </a>
 </div>
 					<button class="header__burger btn-reset" id="burgerMenu">
@@ -101,17 +110,20 @@
 						<span></span>
 					</button>
 					<div class="header__box-search">
-						<button href="#" class="btn-catalog btn-reset" id="dropCatalog">
-  <span class="btn-catalog__icon">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-  <span class="btn-catalog__text">
-    КАТАЛОГ
-  </span>
-</button>
+						<div class="btn-catalog-wrapp">
+  <button href="#" class="btn-catalog btn-reset" id="dropCatalog">
+    <span class="btn-catalog__icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <span class="btn-catalog__text">
+      КАТАЛОГ
+    </span>
+  </button>
+</div>
+
 						<form class="search" action="#" method="post">
   <input class="search__input" type="text" id="search" placeholder="поиск">
   <button class="search__submit btn-reset">
@@ -152,10 +164,13 @@
 						</li>
 						<li>
 							<a href="#">
-								<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+								<svg width="19" height="19" viewBox="0 0 19 19" fill="none">
 									<use xlink:href="img/sprite.svg#111"></use>
 								</svg>
 							</a>
+							<span class="product-counter">
+								0
+							</span>
 						</li>
 						<li>
 							<a href="#">
@@ -163,6 +178,7 @@
 									<use xlink:href="img/sprite.svg#like"></use>
 								</svg>
 							</a>
+							<span class="product-counter">0</span>
 						</li>
 						<li>
 							<a href="#">
@@ -184,10 +200,10 @@
     <div class="drop-down-catalog__menu">
       <ul class="drop-down-catalog__list list-reset">
         <li class="drop-down-catalog__item">
-          <button class="drop-down-catalog__btn btn-reset">
+          <a href="#" class="drop-down-catalog__btn btn-reset">
             <img src="img/drop-down-catalog/1.svg" alt="img">
             <span>Освещение</span>
-          </button>
+          </a>
           <div class="drop-down-catalog__content">
             <div class="drop-down-catalog__content-wrapp">
               <div class="drop-down-catalog__content-level-1">
@@ -676,10 +692,10 @@
           </div>
         </li>
         <li class="drop-down-catalog__item">
-          <button class="drop-down-catalog__btn btn-reset">
+          <a class="drop-down-catalog__btn btn-reset">
             <img src="img/drop-down-catalog/2.svg" alt="img">
             <span>Сумки</span>
-          </button>
+          </a>
           <div class="drop-down-catalog__content">
             <div class="drop-down-catalog__content-wrapp">
               <div class="drop-down-catalog__content-level-1">
@@ -1124,10 +1140,10 @@
           </div>
         </li>
         <li class="drop-down-catalog__item">
-          <button class="drop-down-catalog__btn btn-reset">
+          <a class="drop-down-catalog__btn btn-reset">
             <img src="img/drop-down-catalog/3.svg" alt="img">
             <span>Внешний аккумулятор</span>
-          </button>
+          </a>
           <div class="drop-down-catalog__content">
             <div class="drop-down-catalog__content-wrapp">
               <div class="drop-down-catalog__content-level-1">
@@ -2492,14 +2508,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Аккумулятор</span><strong>NITECORE NL1834</strong><span>18650 3.7v 3400mA</span>
@@ -2507,19 +2543,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison1">
-    <input class="checkbox1__input" type="checkbox" id="comparison1">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2545,18 +2569,68 @@
     </div>
   </div>
 </div>
+
+        <div class="modal-product-order">
+  <div class="modal-product-order__window">
+    <button class="btn-reset modal_del_close">
+      <span></span>
+      <span></span>
+    </button>
+    <form class="modal-product-order__form" action="#">
+      <ul class="modal-product-order__list list-reset">
+        <li>
+          <label>ФИО:</label>
+          <input type="text" name="name" id="orderName">
+        </li>
+        <li>
+          <label>Телефон:</label>
+          <input type="text" name="phone" id="orderPhone">
+        </li>
+      </ul>
+      <input type="hidden">
+      <div class="modal-product-order__btn-group">
+        <button class="modal-product-order__submit personal-data__submit btn-reset">
+          Отправить
+        </button>
+        <button class="modal-product-order__cancel personal-data__cancel btn-reset">
+          Отменить
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
       </li>
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -2564,19 +2638,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison2">
-    <input class="checkbox1__input" type="checkbox" id="comparison2">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2606,14 +2668,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -2621,19 +2703,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison3">
-    <input class="checkbox1__input" type="checkbox" id="comparison3">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2663,14 +2733,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -2678,19 +2768,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison4">
-    <input class="checkbox1__input" type="checkbox" id="comparison4">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2720,14 +2798,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -2735,19 +2833,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison5">
-    <input class="checkbox1__input" type="checkbox" id="comparison5">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2777,14 +2863,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Аккумулятор</span><strong>NITECORE NL1834</strong><span>18650 3.7v 3400mA</span>
@@ -2792,19 +2898,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison6">
-    <input class="checkbox1__input" type="checkbox" id="comparison6">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2834,14 +2928,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -2849,19 +2963,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison7">
-    <input class="checkbox1__input" type="checkbox" id="comparison7">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2924,14 +3026,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Аккумулятор</span><strong>NITECORE NL1834</strong><span>18650 3.7v 3400mA</span>
@@ -2939,19 +3061,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison1">
-    <input class="checkbox1__input" type="checkbox" id="comparison1">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -2977,18 +3087,68 @@
     </div>
   </div>
 </div>
+
+        <div class="modal-product-order">
+  <div class="modal-product-order__window">
+    <button class="btn-reset modal_del_close">
+      <span></span>
+      <span></span>
+    </button>
+    <form class="modal-product-order__form" action="#">
+      <ul class="modal-product-order__list list-reset">
+        <li>
+          <label>ФИО:</label>
+          <input type="text" name="name" id="orderName">
+        </li>
+        <li>
+          <label>Телефон:</label>
+          <input type="text" name="phone" id="orderPhone">
+        </li>
+      </ul>
+      <input type="hidden">
+      <div class="modal-product-order__btn-group">
+        <button class="modal-product-order__submit personal-data__submit btn-reset">
+          Отправить
+        </button>
+        <button class="modal-product-order__cancel personal-data__cancel btn-reset">
+          Отменить
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
       </li>
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -2996,19 +3156,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison2">
-    <input class="checkbox1__input" type="checkbox" id="comparison2">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -3038,14 +3186,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/3.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/3.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -3053,19 +3221,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison3">
-    <input class="checkbox1__input" type="checkbox" id="comparison3">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -3095,14 +3251,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -3110,19 +3286,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison4">
-    <input class="checkbox1__input" type="checkbox" id="comparison4">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -3152,14 +3316,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -3167,19 +3351,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison5">
-    <input class="checkbox1__input" type="checkbox" id="comparison5">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -3209,14 +3381,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/1.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/1.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Аккумулятор</span><strong>NITECORE NL1834</strong><span>18650 3.7v 3400mA</span>
@@ -3224,19 +3416,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison6">
-    <input class="checkbox1__input" type="checkbox" id="comparison6">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -3266,14 +3446,34 @@
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
-    <div class="card3__box-img">
-      <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+    <div class="card3__box-img card3__swiper swiper">
+      <ul class="card3__swiper-wrapper swiper-wrapper list-reset">
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+        <li class="card3__swiper-slide swiper-slide">
+          <picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>
+        </li>
+      </ul>
+      <a href="#" class="card3__link-crd-1"></a>
+      <div class="card3__swiper-pagination swiper-pagination"></div>
+      <!--<picture><source srcset="img/main-page/sec4/2.webp" type="image/webp"><img class="card3__img" src="img/main-page/sec4/2.png" alt="img"></picture>-->
       <!--при добавлении на лайк класса active он красится в желтый-->
-      <button class="btn-reset">
-        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <div class="card3__btn-card-group">
+        <button class="btn-like btn-reset">
+          <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <a href="#" class="btn-compare btn-reset">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <use xlink:href="img/sprite.svg#111"></use>
+          </svg>
+        </a>
+      </div>
     </div>
     <a href="#" class="card3__link-card">
       <span>Налобный фонарь</span><strong>NITECORE HC35</strong><span>4 x CREE XP-G3 S3 100° 2700 люмен 1200 часов 134м</span>
@@ -3281,19 +3481,7 @@
     </a>
   </div>
   <div class="card3__box-bottom">
-    <div class="checkbox1">
-  <label class="checkbox1__label" for="comparison7">
-    <input class="checkbox1__input" type="checkbox" id="comparison7">
-    <span class="checkbox1__box">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.8 1.94995L2.72868 7.04995L1 5.3115" stroke="#FFE100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-    <span class="checkbox1__text">
-      В сравнении
-    </span>
-  </label>
-</div>
+    
     <div class="card3__box-content">
       <div class="card3__box-price">
         <p class="card3__price">
@@ -3482,7 +3670,7 @@
       <div class="footer__content">
         <div class="logo">
   <a href="#" class="logo__link">
-    <picture><source srcset="img/header/logo.webp" type="image/webp"><img src="img/header/logo.png" alt="ligo"></picture>
+    <img src="img/header/logo.svg" alt="ligo">
   </a>
 </div>
         <div class="footer__group-link">

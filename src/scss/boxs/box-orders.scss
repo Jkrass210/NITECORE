@@ -57,7 +57,7 @@
       display: inline-block;
       width: 70%;
       height: 2px;
-      background-color: var(--color-text-white);
+      background-color: var(--p-text);
       transition: background-color 0.4s ease-in-out;
 
       &:first-child {
@@ -105,7 +105,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 159%;
-    color: var(--color-text-white);
+    color: var(--p-text);
   }
 
   &__info-right {
@@ -123,7 +123,7 @@
       font-weight: 700;
       font-size: 24px;
       letter-spacing: -0.05em;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
 
     .box-orders__price-old {
@@ -132,14 +132,14 @@
       font-size: 16px;
       text-decoration: line-through;
       letter-spacing: -0.05em;
-      color: var(--color-text-card-desc);
+      color: var(--price-old);
     }
 
     span:last-child {
       font-family: var(--font-family);
       font-weight: 500;
       font-size: 12px;
-      color: var(--color-text-card-desc);
+      color: var(--price-old);
     }
   }
 }
@@ -155,7 +155,7 @@
       font-weight: 700;
       font-size: 24px;
       letter-spacing: -0.05em;
-      color: var(--color-text-white);
+      color: var(--p-text);
     }
   }
 }
