@@ -1,0 +1,16 @@
+.card22 {
+  height: 100%;
+  position: relative;
+  &__box {
+    height: 100%;
+    border: 1px solid var(--color-background-yellow);
+    padding: 26px 30px;
+    background-color: var(--color-text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:focus,&:focus-visible {
+      outline: none;
+    }
+  }
+}

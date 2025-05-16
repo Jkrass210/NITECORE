@@ -1,10 +1,9 @@
 .card4 {
   padding: 125px 20px 20px;
   position: relative;
-  background-color: beige;
+  background-color: var(--color-background-card);
   max-width: 645px;
   width: 100%;
-  max-height: 187px;
 
   &__img {
     position: absolute;
@@ -18,11 +17,119 @@
   &__box-btn {
     position: relative;
   }
+
+  &.new-style {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .card4 {
+      &__top-box {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        max-height: 190px;
+        display: flex;
+        a {
+          position: relative;
+          display: flex;
+        }
+        picture {
+          width: 100%;
+          //height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__img {
+        position: static;
+        width: 100%;
+        //height: 100%;
+        object-fit: cover;
+      }
+      &__bottom-box {
+        
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-between;
+        p {
+          color: var(--p-text);
+        }
+      }
+      &__title {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        max-width: calc(100% - 40px);
+        z-index: 3;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 159%;
+        color: var(--p-text);
+        transition: color 0.4s ease-in-out;
+      }
+      &__desc {
+        margin-bottom: 5px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 159%;
+        letter-spacing: -.05em;
+        color: var(--p-text);
+        transition: color 0.4s ease-in-out;
+      }
+      &__btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 159%;
+          color: var(--p-text);
+        }
+      }
+      &__box-btn-group {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+        display: flex;
+      }
+    }
+  }
 }
 
 @media (max-width: 1030px) {
   .card4 {
     padding: 89px 13px 13px;
     max-width: 100%;
+  }
+}
+@media (max-width: 669px) {
+  .card4 {
+    &.new-style {
+      .card4 {
+        &__title {
+          top: 10px;
+          font-size: 16px;
+        }
+        &__bottom-box {
+          padding: 7px;
+          gap: 7px;
+        }
+        &__desc {
+          font-size: 12px;
+        }
+        &__btn-group {
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
   }
 }

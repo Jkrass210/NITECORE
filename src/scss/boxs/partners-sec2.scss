@@ -1,0 +1,96 @@
+.partners-sec2 {
+  &__title {
+    margin-bottom: 40px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 108%;
+    text-transform: uppercase;
+    color: var(--p-text);
+  }
+  &__new-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+  }
+  &__swiper {
+    max-width: 1310px;
+    padding: 0 96px;
+    margin: 0 auto;
+    overflow: visible;
+    box-sizing: border-box;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -70px;
+      z-index: 2;
+      width: 133px;
+      height: 100%;
+      background: var(--linear-gradient-1);
+      transition: background 0.4s ease-in-out;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -70px;
+      z-index: 2;
+      width: 133px;
+      height: 100%;
+      background: var(--linear-gradient-2);
+      transition: background 0.4s ease-in-out;
+    }
+    .box-swiper1__swiper-button {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--color-background-yellow);
+      transition: background-color 0.4s ease-in-out;
+      &:focus-visible,&:hover,&:active {
+        background-color: var(--color-background-card);
+      }
+      &.partners-sec2__btn-prev {
+        right: 0;
+      }
+      &.partners-sec2__btn-next {
+        left: 0;
+      }
+    }
+  }
+  &__swiper-wrapper {
+    box-sizing: border-box;
+    .swiper-slide {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .partners-sec2 {
+    &__title {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    &__swiper {
+      &::after {
+        left: -20px;
+        width: 100px;
+      }
+      &::before {
+        right: -20px;
+        width: 100px;
+      }
+      .box-swiper1__swiper-button {
+        &.partners-sec2__btn-next {
+          left: 20px;
+        }
+        &.partners-sec2__btn-prev {
+          right: 20px;
+        }
+      }
+    }
+  }
+}

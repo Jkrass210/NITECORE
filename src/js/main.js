@@ -8,6 +8,7 @@ import { newTabs } from './module/newTabs.js'
 import { filtersBtnTabs } from './module/filtersBtnTabs.js'
 import { boxProductLine } from './module/boxProductLine.js'
 import { initFilterToggle } from './module/initFilterToggle.js';
+import { setupFormValidation } from './module/setupFormValidation.js'
 
 
 testWebP(function (support) {
@@ -448,8 +449,12 @@ if(document.getElementById('theme-toggle')){
   });
 }
 
-if (document.querySelector('a.btn5') && document.querySelector('.modal_del_card')) {
+if (document.querySelector('box-cheap__btn') && document.querySelector('.modal_del_card')) {
   toggleModal('a.btn5', '.modal_del_card','.modal_del_close','.modal_del');
+}
+
+if (document.querySelector('.box-cheap__btn') && document.querySelector('.box-cheap-modal')) {
+  toggleModal('.box-cheap__btn', '.box-cheap-modal','.modal_del_close','.modal-product-order__window');
 }
 
 if (document.querySelector('a.btn-track-order') && document.querySelector('.modal_del_head_top')) {
@@ -649,4 +654,54 @@ if(document.querySelector('#openFilter')){
 
 if(document.querySelector('#openFilter1')){
   initFilterToggle('openFilter1', 'data-filter-for-1');
+}
+
+if (document.querySelectorAll('.box-form-1__form')){
+  document.querySelectorAll(".box-form-1__form").forEach(form => {
+    setupFormValidation(form, ".box-form-1__submit");
+  });
+}
+
+if (document.querySelector('.partners-sec2__swiper')) {
+  const swiperEl = document.querySelector('.partners-sec2__swiper');
+  const swiperWrapper = swiperEl.querySelector('.swiper-wrapper');
+  const slides = swiperWrapper.querySelectorAll('.swiper-slide');
+
+  const partnersSwiper = new Swiper('.partners-sec2__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 7,
+    //centeredSlides: true,
+    //initialSlide: 3,
+    speed: 1000,
+    freeMode: {
+      enabled: true,  // свободное перемещение (без привязки к слайдам)
+      momentum: true, // инерция при прокрутке
+    },
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+      waitForTransition: true,
+    },
+    breakpoints: {
+      580: { slidesPerView: 2, spaceBetween: 10 },
+      850: { slidesPerView: 4, spaceBetween: 15 },
+      1030: { slidesPerView: 5, spaceBetween: 27 },
+    },
+    navigation: {
+      nextEl: '.partners-sec2__btn-prev',
+      prevEl: '.partners-sec2__btn-next',
+    },
+    on: {
+      reachEnd: () => {
+        // При достижении конца добавляем копии первых слайдов
+        slides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          swiperWrapper.appendChild(clone);
+        });
+        partnersSwiper.update(); // обновляем Swiper
+      },
+    },
+  });
+  swiperEl.addEventListener('mouseenter', () => partnersSwiper.autoplay.stop());
+  swiperEl.addEventListener('mouseleave', () => partnersSwiper.autoplay.start());
 }

@@ -129,6 +129,7 @@ body {
   --yellow-gray: #ffe100;
   --yellow-white: #ffe100;
   --white-yellow: #fff;
+  --white-838383: #fff;
   --content-box-hover: #212121;
   --content-level-2: #0d0c0c;
   --content-level-2-link: rgba(255, 255, 255, 0.6);
@@ -150,6 +151,8 @@ body {
   --img: url(../img/main-page/sec1/beac1.png);
   --img-small: url("../img/main-page/sec1/beac1(340).png");
   --color-double-catalog: #4c4a4a;
+  --linear-gradient-1: linear-gradient(270deg, rgba(33, 33, 33, 0) 0%, #212121 100%);
+  --linear-gradient-2: linear-gradient(270deg, #212121 0%, rgba(33, 33, 33, 0) 100%);
 }
 
 
@@ -169,6 +172,7 @@ body {
   --yellow-gray: #383838;
   --yellow-white: #fff;
   --white-yellow: #ffe100;
+  --white-838383: #838383;
   --content-box-hover: #dcdcdc;
   --content-level-2: #e8e8e8;
   --content-level-2-link: rgba(0, 0, 0, 0.6);
@@ -193,6 +197,8 @@ body {
   --colir-border-marker: #d9d9d9;
   --color-switcher: #fff;
   --color-double-catalog: #d5d5d5;
+  --linear-gradient-1: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  --linear-gradient-2: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .fslightbox-slide-number-container {

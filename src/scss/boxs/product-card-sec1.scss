@@ -141,7 +141,7 @@
     align-items: stretch;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     p {
       white-space: nowrap;
       display: flex;
@@ -294,6 +294,13 @@
     display: none;
     &.active {
       display: block;
+    }
+    span {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 120%;
+      color: var(--p-text) !important;
     }
     p {
       margin-bottom: 20px;

@@ -1,0 +1,44 @@
+.box-cheap {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  &__title {
+    margin-bottom: 20px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--p-text);
+    text-align: center;
+  }
+  &__btn {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--p-text);
+    border-bottom: 1px dashed var(--p-text);
+    transition: color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+    &:focus-visible, &:focus {
+      outline: none;
+    }
+    &:focus-visible,&:hover,&:active {
+      color: var(--color-background-yellow);
+      border-color: var(--color-background-yellow);
+    }
+  }
+  .modal-product-order__list li label{
+    width: 26%;
+  }
+}
+
+@media (max-width: 1030px) {
+  .box-cheap {
+    &__title {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .modal-product-order__list li label {
+      width: 100%;
+    }
+  }
+}
