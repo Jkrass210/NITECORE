@@ -10,25 +10,29 @@
     <section class="section main-sec1">
       <div class="main-sec1__swiper swiper" id="swiper-4"  dir="rtl">
         <ul class="main-sec1__swiper-wrapper swiper-wrapper list-reset">
-          <li class="main-sec1__swiper-slide swiper-slide">
+          <!--<li class="main-sec1__swiper-slide new swiper-slide">
             @@include('html/components/slide-hero.html',{"uplImg":"img/main-page/sec1/img1.png"})
-          </li>
-          <li class="main-sec1__swiper-slide swiper-slide">
+            @@include('html/components/slide-hero-video.html')
+            @@include('html/components/slide-hero-new.html')
+          </li>-->
+          <li class="main-sec1__swiper-slide mobil swiper-slide">
             @@include('html/components/slide-hero.html',{"uplImg":"img/main-page/sec1/img1.png"})
+            @@include('html/components/slide-hero-mobil.html')
           </li>
-          <li class="main-sec1__swiper-slide swiper-slide">
+          <li class="main-sec1__swiper-slide mobil swiper-slide">
             @@include('html/components/slide-hero.html',{"uplImg":"img/main-page/sec1/img1.png"})
+            @@include('html/components/slide-hero-mobil.html')
           </li>
-          <li class="main-sec1__swiper-slide swiper-slide">
+          <!--<li class="main-sec1__swiper-slide swiper-slide">
             @@include('html/components/slide-hero.html',{"uplImg":"img/main-page/sec1/img1.png"})
-          </li>
+          </li>-->
         </ul>
         <div class="main-sec1__swiper-pagination swiper-pagination"></div>
       </div>
       <div class="main-sec1__container container">
         <div class="main-sec1__swiper-2 swiper" id="swiper-8">
           <ul class="main-sec1__swiper-wrapper-2 swiper-wrapper list-reset">
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            <!--<li class="main-sec1__swiper-slide-2 swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой эксперт&nbsp;в области производства фонарей!
@@ -41,8 +45,8 @@
                   @@include('html/components/marker.html')
                 </div>
               </div>
-            </li>
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            </li>-->
+            <li class="main-sec1__swiper-slide-2 mobil swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой!
@@ -56,7 +60,7 @@
                 </div>
               </div>
             </li>
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            <li class="main-sec1__swiper-slide-2 mobil swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой эксперт&nbsp;в области производства фонарей!
@@ -70,7 +74,7 @@
                 </div>
               </div>
             </li>
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            <!--<li class="main-sec1__swiper-slide-2 swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой эксперт&nbsp;в области производства фонарей!
@@ -83,7 +87,7 @@
                   @@include('html/components/marker.html')
                 </div>
               </div>
-            </li>
+            </li>-->
           </ul>
         </div>
       </div>
@@ -101,6 +105,43 @@
           </div>
         </div>
       </div>-->
+      <div class="main-sec1__mobile-swiper-wrapper">
+        <div class="mobile-swiper-hero swiper">
+          <ul class="mobile-swiper-hero__swiper-wrapper swiper-wrapper list-reset">
+            <li class="mobile-swiper-hero__swiper-slide swiper-slide">
+              <div class="mobile-swiper-hero__card">
+                <a href="#" class="mobile-swiper-hero__link">
+                  <img class="mobile-swiper-hero__img" src="img/mobile-swiper-hero/1.png" alt="img">
+                </a>
+              </div>
+            </li>
+            <li class="mobile-swiper-hero__swiper-slide swiper-slide">
+              <div class="mobile-swiper-hero__card">
+                <a href="#" class="mobile-swiper-hero__link">
+                  <img class="mobile-swiper-hero__img" src="img/mobile-swiper-hero/1.png" alt="img">
+                </a>
+              </div>
+            </li>
+            <li class="mobile-swiper-hero__swiper-slide swiper-slide">
+              <div class="mobile-swiper-hero__card">
+                <a href="#" class="mobile-swiper-hero__link">
+                  <img class="mobile-swiper-hero__img" src="img/mobile-swiper-hero/1.png" alt="img">
+                </a>
+              </div>
+            </li>
+            <li class="mobile-swiper-hero__swiper-slide video swiper-slide">
+              <div class="slide-hero-video">
+                <video autoplay loop muted playsinline>
+                  <source src="video/video1.webm" type="video/webm">
+                  <source src="video/video.mp4" type="video/mp4">
+                  Ваш браузер не поддерживает HTML5 видео.
+                </video>
+              </div>
+            </li>
+          </ul>
+          <div class="mobile-swiper-hero__swiper-pagination swiper-pagination"></div>
+        </div>
+      </div>
     </section>
     <section class="section main-sec2">
       <div class="main-sec2__contauner container">
@@ -121,7 +162,7 @@
           </ul>
           <div class="main-sec2__decor">
             <a href="#">
-              <img src="img/main-page/sec1/NN.svg" alt="N">
+              <img src="img/main-page/sec1/NN.svg" alt="img">
             </a>
           </div>
         </div>
@@ -181,6 +222,7 @@
         </div>
       </div>
     </section>
+    @@include('html/boxs/box-video.html')
     <section class="section main-sec7">
       <div class="main-sec7__container container">
         <div class="main-sec7__content">

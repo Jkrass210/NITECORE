@@ -37,6 +37,15 @@
       height: 100%;
     }
   }
+
+  &__bottom-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn3__btn {
+      padding: 20px;
+    }
+  }
 }
 
 @media (max-width: 669px) {

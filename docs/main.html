@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная страница - NITECORE</title>
-  <link href="css/normalize.min.css?_v=20250516164232" rel="stylesheet">
-  <link href="css/swiper-bundle.min.css?_v=20250516164232" rel="stylesheet">
-  <link href="css/style.min.css?_v=20250516164232" rel="stylesheet">
+  <link href="css/normalize.min.css?_v=20250531120749" rel="stylesheet">
+  <link href="css/swiper-bundle.min.css?_v=20250531120749" rel="stylesheet">
+  <link href="css/style.min.css?_v=20250531120749" rel="stylesheet">
 
   <script>
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.className = savedTheme;
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250516164232" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/spritespin@4.0.7/release/spritespin.min.js?_v=20250516164232" defer></script>
-  <script src="js/cleave-min.js?_v=20250516164232" defer></script>
-  <script src="js/swiper-bundle.min.js?_v=20250516164232" defer></script>
-  <script src="js/fslightbox-min.js?_v=20250516164232" defer></script>
-  <script type="module" src="js/main-min.js?_v=20250516164232"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20250531120749" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/spritespin@4.0.7/release/spritespin.min.js?_v=20250531120749" defer></script>
+  <script src="js/cleave-min.js?_v=20250531120749" defer></script>
+  <script src="js/swiper-bundle.min.js?_v=20250531120749" defer></script>
+  <script src="js/fslightbox-min.js?_v=20250531120749" defer></script>
+  <script type="module" src="js/main-min.js?_v=20250531120749"></script>
 </head>
 
 <body>
@@ -1949,7 +1949,7 @@
     <section class="section main-sec1">
       <div class="main-sec1__swiper swiper" id="swiper-4"  dir="rtl">
         <ul class="main-sec1__swiper-wrapper swiper-wrapper list-reset">
-          <li class="main-sec1__swiper-slide swiper-slide">
+          <!--<li class="main-sec1__swiper-slide new swiper-slide">
             <div class="slide-hero">
   <div class="slide-hero__container container">
     <div class="slide-hero__line"></div>
@@ -1958,8 +1958,18 @@
     </a>
   </div>
 </div>
-          </li>
-          <li class="main-sec1__swiper-slide swiper-slide">
+            <div class="slide-hero-video">
+  <video autoplay loop muted playsinline>
+    <source src="video/video1.webm" type="video/webm">
+    <source src="video/video.mp4" type="video/mp4">
+    Ваш браузер не поддерживает HTML5 видео.
+  </video>
+</div>
+            <div class="slide-hero-new">
+  <picture><source srcset="img/main-page/sec1/img1.webp" type="image/webp"><img src="img/main-page/sec1/img1.png" alt="img"></picture>
+</div>
+          </li>-->
+          <li class="main-sec1__swiper-slide mobil swiper-slide">
             <div class="slide-hero">
   <div class="slide-hero__container container">
     <div class="slide-hero__line"></div>
@@ -1968,8 +1978,13 @@
     </a>
   </div>
 </div>
+            <div class="slide-hero-mobil">
+  <a href="#" class="slide-hero-mobil__link">
+    <picture><source srcset="img/main-page/sec1/img1.webp" type="image/webp"><img src="img/main-page/sec1/img1.png" alt="img"></picture>
+  </a>
+</div>
           </li>
-          <li class="main-sec1__swiper-slide swiper-slide">
+          <li class="main-sec1__swiper-slide mobil swiper-slide">
             <div class="slide-hero">
   <div class="slide-hero__container container">
     <div class="slide-hero__line"></div>
@@ -1978,8 +1993,13 @@
     </a>
   </div>
 </div>
+            <div class="slide-hero-mobil">
+  <a href="#" class="slide-hero-mobil__link">
+    <picture><source srcset="img/main-page/sec1/img1.webp" type="image/webp"><img src="img/main-page/sec1/img1.png" alt="img"></picture>
+  </a>
+</div>
           </li>
-          <li class="main-sec1__swiper-slide swiper-slide">
+          <!--<li class="main-sec1__swiper-slide swiper-slide">
             <div class="slide-hero">
   <div class="slide-hero__container container">
     <div class="slide-hero__line"></div>
@@ -1988,14 +2008,14 @@
     </a>
   </div>
 </div>
-          </li>
+          </li>-->
         </ul>
         <div class="main-sec1__swiper-pagination swiper-pagination"></div>
       </div>
       <div class="main-sec1__container container">
         <div class="main-sec1__swiper-2 swiper" id="swiper-8">
           <ul class="main-sec1__swiper-wrapper-2 swiper-wrapper list-reset">
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            <!--<li class="main-sec1__swiper-slide-2 swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой эксперт&nbsp;в области производства фонарей!
@@ -2036,8 +2056,8 @@
 </div>
                 </div>
               </div>
-            </li>
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            </li>-->
+            <li class="main-sec1__swiper-slide-2 mobil swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой!
@@ -2079,7 +2099,7 @@
                 </div>
               </div>
             </li>
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            <li class="main-sec1__swiper-slide-2 mobil swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой эксперт&nbsp;в области производства фонарей!
@@ -2121,7 +2141,7 @@
                 </div>
               </div>
             </li>
-            <li class="main-sec1__swiper-slide-2 swiper-slide">
+            <!--<li class="main-sec1__swiper-slide-2 swiper-slide">
               <div class="main-sec1__content">
                 <h2 class="main-sec1__title">
                   <span>NiteСore</span>&nbsp;&mdash; мировой эксперт&nbsp;в области производства фонарей!
@@ -2162,7 +2182,7 @@
 </div>
                 </div>
               </div>
-            </li>
+            </li>-->
           </ul>
         </div>
       </div>
@@ -2208,6 +2228,43 @@
           </div>
         </div>
       </div>-->
+      <div class="main-sec1__mobile-swiper-wrapper">
+        <div class="mobile-swiper-hero swiper">
+          <ul class="mobile-swiper-hero__swiper-wrapper swiper-wrapper list-reset">
+            <li class="mobile-swiper-hero__swiper-slide swiper-slide">
+              <div class="mobile-swiper-hero__card">
+                <a href="#" class="mobile-swiper-hero__link">
+                  <picture><source srcset="img/mobile-swiper-hero/1.webp" type="image/webp"><img class="mobile-swiper-hero__img" src="img/mobile-swiper-hero/1.png" alt="img"></picture>
+                </a>
+              </div>
+            </li>
+            <li class="mobile-swiper-hero__swiper-slide swiper-slide">
+              <div class="mobile-swiper-hero__card">
+                <a href="#" class="mobile-swiper-hero__link">
+                  <picture><source srcset="img/mobile-swiper-hero/1.webp" type="image/webp"><img class="mobile-swiper-hero__img" src="img/mobile-swiper-hero/1.png" alt="img"></picture>
+                </a>
+              </div>
+            </li>
+            <li class="mobile-swiper-hero__swiper-slide swiper-slide">
+              <div class="mobile-swiper-hero__card">
+                <a href="#" class="mobile-swiper-hero__link">
+                  <picture><source srcset="img/mobile-swiper-hero/1.webp" type="image/webp"><img class="mobile-swiper-hero__img" src="img/mobile-swiper-hero/1.png" alt="img"></picture>
+                </a>
+              </div>
+            </li>
+            <li class="mobile-swiper-hero__swiper-slide video swiper-slide">
+              <div class="slide-hero-video">
+                <video autoplay loop muted playsinline>
+                  <source src="video/video1.webm" type="video/webm">
+                  <source src="video/video.mp4" type="video/mp4">
+                  Ваш браузер не поддерживает HTML5 видео.
+                </video>
+              </div>
+            </li>
+          </ul>
+          <div class="mobile-swiper-hero__swiper-pagination swiper-pagination"></div>
+        </div>
+      </div>
     </section>
     <section class="section main-sec2">
       <div class="main-sec2__contauner container">
@@ -2312,7 +2369,7 @@
           </ul>
           <div class="main-sec2__decor">
             <a href="#">
-              <img src="img/main-page/sec1/NN.svg" alt="N">
+              <img src="img/main-page/sec1/NN.svg" alt="img">
             </a>
           </div>
         </div>
@@ -2506,6 +2563,11 @@
   </div>
   <div class="box-swiper1__swiper swiper" id="swiper-2">
     <ul class="box-swiper1__swiper-wrapper swiper-wrapper list-reset">
+      <li class="box-swiper1__swiper-slide swiper-slide item-card3">
+        <a href="#" class="item-card3__link">
+          <picture><source srcset="img/about-us/1.webp" type="image/webp"><img class="item-card3__create-img" src="img/about-us/1.jpg" alt="img"></picture>
+        </a>
+      </li>
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
@@ -2528,7 +2590,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2536,6 +2600,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -2623,7 +2694,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2631,6 +2704,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -2688,7 +2768,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2696,6 +2778,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -2753,7 +2842,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2761,6 +2852,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -2818,7 +2916,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2826,6 +2926,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -2883,7 +2990,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2891,6 +3000,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -2948,7 +3064,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -2956,6 +3074,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3024,6 +3149,11 @@
   </div>
   <div class="box-swiper1__swiper swiper" id="swiper-1">
     <ul class="box-swiper1__swiper-wrapper swiper-wrapper list-reset">
+      <li class="box-swiper1__swiper-slide swiper-slide item-card3">
+        <a href="#" class="item-card3__link">
+          <picture><source srcset="img/about-us/1.webp" type="image/webp"><img class="item-card3__create-img" src="img/about-us/1.jpg" alt="img"></picture>
+        </a>
+      </li>
       <li class="box-swiper1__swiper-slide swiper-slide">
         <div class="card3">
   <div class="card3__box-top">
@@ -3046,7 +3176,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3054,6 +3186,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3141,7 +3280,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3149,6 +3290,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3206,7 +3354,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3214,6 +3364,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3271,7 +3428,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3279,6 +3438,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3336,7 +3502,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3344,6 +3512,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3401,7 +3576,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3409,6 +3586,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3466,7 +3650,9 @@
       <div class="card3__btn-card-group">
         <button class="btn-like btn-reset">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z" stroke="currentColor" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2.12356 2.72361C3.09871 1.74876 4.42111 1.20112 5.79996 1.20112C7.17882 1.20112 8.50122 1.74876 9.47636 2.72361L11 4.24591L12.5236 2.72361C13.0032 2.22695 13.577 1.83081 14.2115 1.55828C14.8459 1.28575 15.5282 1.1423 16.2187 1.1363C16.9091 1.1303 17.5939 1.26187 18.2329 1.52333C18.872 1.7848 19.4526 2.17091 19.9408 2.65915C20.4291 3.14739 20.8152 3.72798 21.0766 4.36705C21.3381 5.00611 21.4697 5.69084 21.4637 6.38129C21.4577 7.07175 21.3142 7.75409 21.0417 8.38851C20.7692 9.02293 20.373 9.59672 19.8764 10.0764L11 18.9541L2.12356 10.0764C1.14871 9.10126 0.601074 7.77886 0.601074 6.40001C0.601074 5.02115 1.14871 3.69875 2.12356 2.72361V2.72361Z"
+              stroke="currentColor" stroke-linejoin="round" />
           </svg>
         </button>
         <a href="#" class="btn-compare btn-reset">
@@ -3474,6 +3660,13 @@
             <use xlink:href="img/sprite.svg#111"></use>
           </svg>
         </a>
+      </div>
+      <div class="card3__hit-card-group">
+        <div class="hit-card-block">
+        </div>
+        <p class="hit-card-text">ХИТ
+          <span>продаж</span>
+        </p>
       </div>
     </div>
     <a href="#" class="card3__link-card">
@@ -3540,6 +3733,71 @@
         </div>
       </div>
     </section>
+    <section class="section min-section box-video">
+  <div class="box-video__container container">
+    <div class="box-video__content">
+      <h2 class="section-title">
+  Последние видео
+</h2>
+    </div>
+    <ul class="box-video__list list-reset">
+      <li>
+        <div class="box-video__card">
+          <div class="box-video__wrapp-video">
+            <iframe src="https://vk.com/video_ext.php?oid=-73528734&id=456239160" allow="fullscreen; encrypted-media; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="box-video__card-bottom">
+            <h3 class="box-video__title-video">
+                Hklsdncoknsdc asdckn
+            </h3>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="box-video__card">
+          <div class="box-video__wrapp-video">
+            <iframe src="https://vk.com/video_ext.php?oid=-73528734&id=456239160" allow="fullscreen; encrypted-media; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="box-video__card-bottom">
+            <h3 class="box-video__title-video">
+              Hasdas asdasdasd asdfsaa
+            </h3>
+          </div>
+        </div>
+        
+      </li>
+      <li>
+        <div class="box-video__card">
+          <div class="box-video__wrapp-video">
+            <iframe src="https://vk.com/video_ext.php?oid=-73528734&id=456239160" allow="fullscreen; encrypted-media; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="box-video__card-bottom">
+            <h3 class="box-video__title-video">
+              Hasdas asdas asdfsasdasdaa
+            </h3>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="box-video__card">
+          <div class="box-video__wrapp-video">
+            <iframe src="https://vk.com/video_ext.php?oid=-73528734&id=456239160" allow="fullscreen; encrypted-media; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="box-video__card-bottom">
+            <h3 class="box-video__title-video">
+              Hasdas asdas a
+            </h3>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="main-sec7__bottom-line">
+      <a class="main-sec7__bottom-link btn3__btn" href="#">
+        Смотреть все видео
+      </a>
+    </div>
+  </div>
+</section>
     <section class="section main-sec7">
       <div class="main-sec7__container container">
         <div class="main-sec7__content">

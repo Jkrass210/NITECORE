@@ -5,6 +5,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
+    &__desc {
+      font-weight: 600;
+    }
     &__desc-bottom {
       font-family: var(--font-family);
       font-weight: 400;

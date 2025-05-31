@@ -9,13 +9,14 @@ import { filtersBtnTabs } from './module/filtersBtnTabs.js'
 import { boxProductLine } from './module/boxProductLine.js'
 import { initFilterToggle } from './module/initFilterToggle.js';
 import { setupFormValidation } from './module/setupFormValidation.js'
+import { registration } from './module/registration.js'
 
 
 testWebP(function (support) {
   if (support == true) {
     document.querySelector('body').classList.add('webp');
     console.log("выполнился webp")
-  }else{
+  } else {
     document.querySelector('body').classList.add('no-webp');
   }
 });
@@ -191,7 +192,7 @@ if (document.querySelector('#swiper-3') && document.querySelector('#swiper-3 > .
   });
 }
 
-if (
+/*if (
   document.querySelector('#swiper-8') &&
   document.querySelector('#swiper-8 > .swiper-wrapper') &&
   document.querySelectorAll('#swiper-8 > .swiper-slide') &&
@@ -248,7 +249,144 @@ if (
 
   swiper4.controller.control = swiper8;
   swiper8.controller.control = swiper4;
+}*/
+
+
+
+function initDesktopSwipers() {
+  // Проверяем загружена ли библиотека Swiper
+  if (typeof Swiper === 'undefined') {
+    return;
+  }
+
+  // Проверяем наличие необходимых элементов
+  const swiper4El = document.querySelector('#swiper-4');
+  const swiper8El = document.querySelector('#swiper-8');
+  const paginationEl = document.querySelector('.main-sec1__swiper-pagination');
+
+  if (!swiper4El || !swiper8El || !paginationEl) {
+    console.log('Required elements not found:', {
+      swiper4: !!swiper4El,
+      swiper8: !!swiper8El,
+      pagination: !!paginationEl
+    });
+    return;
+  }
+
+  let swiper4 = null;
+  let swiper8 = null;
+
+  function initSwipers() {
+    console.log('Init swipers, window width:', window.innerWidth);
+    
+    // Инициализируем только при ширине > 669px
+    if (window.innerWidth > 669) {
+      if (!swiper4) {
+        console.log('Initializing swiper4');
+        swiper4 = new Swiper("#swiper-4", {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          freeMode: false,
+          reverseDirection: true,
+          on: {
+            init: function () {
+              const firstSlide = this.slides[this.activeIndex];
+              firstSlide.classList.add('swiper-slide-in');
+              console.log('Swiper4 initialized');
+            },
+            slideChangeTransitionStart: function () {
+              this.slides.forEach(slide => slide.classList.remove('swiper-slide-in'));
+            },
+            slideChangeTransitionEnd: function () {
+              const activeSlide = this.slides[this.activeIndex];
+              activeSlide.classList.add('swiper-slide-in');
+            }
+          },
+        });
+      }
+
+      if (!swiper8) {
+        console.log('Initializing swiper8');
+        swiper8 = new Swiper("#swiper-8", {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          freeMode: false,
+          pagination: {
+            el: ".main-sec1__swiper-pagination",
+            clickable: true,
+          },
+          autoplay: {
+            delay: 7000,
+            disableOnInteraction: false,
+          },
+          on: {
+            init: function () {
+              const firstSlide = this.slides[this.activeIndex];
+              firstSlide.classList.add('swiper-slide-in');
+              console.log('Swiper8 initialized');
+            },
+            slideChangeTransitionStart: function () {
+              this.slides.forEach(slide => slide.classList.remove('swiper-slide-in'));
+            },
+            slideChangeTransitionEnd: function () {
+              const activeSlide = this.slides[this.activeIndex];
+              activeSlide.classList.add('swiper-slide-in');
+            }
+          },
+        });
+      }
+
+      // Связываем слайдеры
+      if (swiper4 && swiper8) {
+        console.log('Linking swipers');
+        swiper4.controller.control = swiper8;
+        swiper8.controller.control = swiper4;
+      }
+    } else {
+      console.log('Destroying swipers (mobile view)');
+      // Уничтожаем слайдеры при ширине ≤ 669px
+      if (swiper4) {
+        swiper4.destroy();
+        swiper4 = null;
+      }
+      if (swiper8) {
+        swiper8.destroy();
+        swiper8 = null;
+      }
+    }
+  }
+
+  // Добавляем debounce для resize
+  let resizeTimeout;
+  function handleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initSwipers, 100);
+  }
+
+  // Инициализация при загрузке
+  initSwipers();
+
+  // Обработчик изменения размера окна
+  window.addEventListener('resize', handleResize);
 }
+
+// Проверяем состояние документа
+function checkDocumentReady() {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initDesktopSwipers();
+  } else {
+    document.addEventListener('DOMContentLoaded', initDesktopSwipers);
+  }
+}
+
+// Запускаем проверку
+checkDocumentReady();
+
+
+
+
+
+
 
 function initSwiper5() {
   if (document.querySelector('#swiper-5') && document.querySelector('#swiper-5 > .swiper-wrapper') && document.querySelectorAll('#swiper-5 > .swiper-slide') && document.querySelector('#swiper-6') && document.querySelector('#swiper-6 > .swiper-wrapper') && document.querySelectorAll('#swiper-6 > .swiper-slide')) {
@@ -301,18 +439,18 @@ if (document.querySelector('.product-card-sec1__info')) {
 
 if (document.querySelector('.drop-down-catalog')) {
   const boxCatalog = document.querySelector('.drop-down-catalog')
-  if (window.innerWidth > 950){
+  if (window.innerWidth > 950) {
     openMenuLevel1({
-      boxCatalog:boxCatalog,
-      classBtns:'a.drop-down-catalog__btn', 
-      classBox:'.drop-down-catalog__content-wrapp', 
-      targetSelector:'.drop-down-catalog__main-content'
+      boxCatalog: boxCatalog,
+      classBtns: 'a.drop-down-catalog__btn',
+      classBox: '.drop-down-catalog__content-wrapp',
+      targetSelector: '.drop-down-catalog__main-content'
     });
   } else if (window.innerWidth <= 950) {
     setupMobileMenu()
   }
-  
-  
+
+
   window.addEventListener('resize', handleResize);
   handleResize();
 }
@@ -368,8 +506,8 @@ if (!document.querySelector('.new_block') && document.querySelector('#swiper-6')
 } else if (document.querySelector('.new_block') && document.querySelector('#swiper-6') /*&& document.querySelector('#swiper-6 > .swiper-wrapper') && document.querySelectorAll('#swiper-6 > .swiper-slide')*/) {
   document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.product-card-sec1__equipment-list-1') &&
-        document.querySelector('#swiper-6') &&
-        document.querySelector('.new_block')) {
+      document.querySelector('#swiper-6') &&
+      document.querySelector('.new_block')) {
       initializeSwiperSwitcher({
         buttonListSelector: '.product-card-sec1__equipment-list-1',
         swiperContainerId: 'swiper-6',
@@ -432,37 +570,37 @@ function initializeSwiperSwitcher({
   }
 }
 
-if(document.getElementById('theme-toggle')){
+if (document.getElementById('theme-toggle')) {
   const toggle = document.getElementById('theme-toggle');
   const htmlElement = document.documentElement;
 
   toggle.checked = htmlElement.classList.contains('light');
 
   toggle.addEventListener('change', () => {
-      if (toggle.checked) {
-          htmlElement.className = 'light';
-          localStorage.setItem('theme', 'light');
-      } else {
-          htmlElement.className = 'dark';
-          localStorage.setItem('theme', 'dark');
-      }
+    if (toggle.checked) {
+      htmlElement.className = 'light';
+      localStorage.setItem('theme', 'light');
+    } else {
+      htmlElement.className = 'dark';
+      localStorage.setItem('theme', 'dark');
+    }
   });
 }
 
 if (document.querySelector('box-cheap__btn') && document.querySelector('.modal_del_card')) {
-  toggleModal('a.btn5', '.modal_del_card','.modal_del_close','.modal_del');
+  toggleModal('a.btn5', '.modal_del_card', '.modal_del_close', '.modal_del');
 }
 
 if (document.querySelector('.box-cheap__btn') && document.querySelector('.box-cheap-modal')) {
-  toggleModal('.box-cheap__btn', '.box-cheap-modal','.modal_del_close','.modal-product-order__window');
+  toggleModal('.box-cheap__btn', '.box-cheap-modal', '.modal_del_close', '.modal-product-order__window');
 }
 
 if (document.querySelector('a.btn-track-order') && document.querySelector('.modal_del_head_top')) {
-  toggleModal('a.btn-track-order', '.modal_del_head_top','.modal_del_close','.modal_del_head');
+  toggleModal('a.btn-track-order', '.modal_del_head_top', '.modal_del_close', '.modal_del_head');
 }
 
 
-if(document.querySelector('.product-card-sec1__box-left') && document.querySelector('.product-card-sec1__hidden-swiper-mobil')) {
+if (document.querySelector('.product-card-sec1__box-left') && document.querySelector('.product-card-sec1__hidden-swiper-mobil')) {
   document.addEventListener('DOMContentLoaded', () => {
     const boxLeftWrapp = document.querySelector('.product-card-sec1__box-left-wrapp');
     const hiddenSwiperMobile = document.querySelector('.product-card-sec1__hidden-swiper-mobil');
@@ -470,7 +608,7 @@ if(document.querySelector('.product-card-sec1__box-left') && document.querySelec
 
     const handleResize1 = () => {
       const screenWidth = window.innerWidth;
-  
+
       if (screenWidth < 1030) {
         if (!hiddenSwiperMobile.contains(boxLeftWrapp)) {
           hiddenSwiperMobile.appendChild(boxLeftWrapp);
@@ -483,7 +621,7 @@ if(document.querySelector('.product-card-sec1__box-left') && document.querySelec
     };
     window.addEventListener('resize', handleResize1);
     handleResize1();
-  });  
+  });
 }
 
 
@@ -507,7 +645,7 @@ if (document.querySelectorAll(".product-card-sec1__item-tab .btn6") && document.
 if (document.getElementById('btnScroll')) {
   document.addEventListener('DOMContentLoaded', () => {
     const btnScroll = document.getElementById('btnScroll');
-  
+
     const toggleScrollButton = () => {
       if (window.scrollY > document.documentElement.scrollHeight / 4) {
         btnScroll.classList.add('active');
@@ -515,7 +653,7 @@ if (document.getElementById('btnScroll')) {
         btnScroll.classList.remove('active');
       }
     };
-  
+
     const scrollToTop = () => {
       window.scrollTo({
         top: 0,
@@ -529,7 +667,7 @@ if (document.getElementById('btnScroll')) {
   });
 }
 
-if (document.querySelector('.box-double-catalog')){
+if (document.querySelector('.box-double-catalog')) {
   newTabs();
 }
 
@@ -583,7 +721,7 @@ if (document.querySelector('.box-double-catalog')){
   window.addEventListener('resize', updateMainPaddingOnResize);
 });*/
 
-if(document.querySelectorAll(".filters-btn-tabs")){
+if (document.querySelectorAll(".filters-btn-tabs")) {
   filtersBtnTabs();
 };
 
@@ -594,7 +732,7 @@ if (document.querySelector('.product-card-sec1__box-right') && document.querySel
   boxProductLine();
 };
 
-if (document.querySelector('#swiper-20') && document.querySelector('#swiper-21')){
+if (document.querySelector('#swiper-20') && document.querySelector('#swiper-21')) {
   const swiper21 = new Swiper("#swiper-21", {
     spaceBetween: 5, // Расстояние между слайдами превью
     slidesPerView: 4, // Количество превью на экране
@@ -648,15 +786,15 @@ if (document.querySelector('#swiper-20') && document.querySelector('#swiper-21')
   });
 }*/
 
-if(document.querySelector('#openFilter')){
+if (document.querySelector('#openFilter')) {
   initFilterToggle('openFilter', 'data-filter-for');
 }
 
-if(document.querySelector('#openFilter1')){
+if (document.querySelector('#openFilter1')) {
   initFilterToggle('openFilter1', 'data-filter-for-1');
 }
 
-if (document.querySelectorAll('.box-form-1__form')){
+if (document.querySelectorAll('.box-form-1__form')) {
   document.querySelectorAll(".box-form-1__form").forEach(form => {
     setupFormValidation(form, ".box-form-1__submit");
   });
@@ -704,4 +842,52 @@ if (document.querySelector('.partners-sec2__swiper')) {
   });
   swiperEl.addEventListener('mouseenter', () => partnersSwiper.autoplay.stop());
   swiperEl.addEventListener('mouseleave', () => partnersSwiper.autoplay.start());
+}
+
+function initMobileSwiper() {
+  const swiperEl = document.querySelector('.mobile-swiper-hero');
+  if (!swiperEl) return; // если элемента нет - выходим
+
+  let mobileSwiper = null;
+
+  function initSwiper() {
+    if (window.innerWidth <= 669 && !mobileSwiper) {
+      mobileSwiper = new Swiper('.mobile-swiper-hero', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: '.mobile-swiper-hero__swiper-pagination',
+          clickable: true,
+        },
+        loop: true,
+        autoplay: {
+          delay: 7000,
+          disableOnInteraction: false,
+        },
+      });
+    } else if (window.innerWidth > 669 && mobileSwiper) {
+      mobileSwiper.destroy();
+      mobileSwiper = null;
+    }
+  }
+
+  // Инициализация сразу (не ждем DOMContentLoaded)
+  initSwiper();
+
+  // Обработчик изменения размера окна
+  window.addEventListener('resize', initSwiper);
+}
+
+// Запускаем инициализацию когда DOM готов
+document.addEventListener('DOMContentLoaded', initMobileSwiper);
+
+// Также запускаем сразу (на случай если DOM уже загружен)
+if (document.readyState === 'complete') {
+  initMobileSwiper();
+} else {
+  document.addEventListener('DOMContentLoaded', initMobileSwiper);
+}
+
+if (document.querySelector('.registration')) {
+  registration()
 }

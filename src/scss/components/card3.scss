@@ -125,6 +125,37 @@
       }
     }
   }
+
+  &__hit-card-group {
+    width: 86px;
+    height: 86px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    .hit-card-block {
+      width: 0;
+      height: 0;
+      border-right: 86px solid transparent;
+      border-top: 86px solid var(--color-background-yellow);
+    }
+    .hit-card-text {
+      font-family: var(--font-family);
+      font-size: 14px;
+      position: absolute;
+      transform: rotate(-45deg);
+      text-align:  center;
+      top: 11px;
+      left: -2px;
+      font-weight: 500;
+      line-height: 15px;
+      span {
+        display: block;
+      }
+    }
+  }
+
+
   &__box-content {
     min-height: 35px;
     height: auto;
@@ -235,6 +266,20 @@
     &__box-price {
       flex-direction: column;
       align-items: stretch;
+    }
+
+    &__hit-card-group {
+      width: 76px;
+      height: 76px;
+      .hit-card-block {
+        border-right: 76px solid transparent;
+        border-top: 76px solid var(--color-background-yellow);
+      }
+      .hit-card-text {
+        font-size: 12px;
+        top: 8px;
+        left: 0;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 .guarantee-sec4 {
   .delivery-sec2__list {
-    .double-column {
+    li:first-child, li:nth-child(2) {
       grid-column: span 2;
     }
   }
@@ -9,7 +9,7 @@
 @media (max-width: 1030px) {
   .guarantee-sec4 {
     .delivery-sec2__list {
-      .double-column {
+      li:first-child, li:nth-child(2) {
         grid-column: span 1;
       }
     }

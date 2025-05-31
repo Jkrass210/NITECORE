@@ -1,0 +1,85 @@
+.mobile-swiper-hero {
+  &__swiper-slide {
+    box-sizing: border-box;
+    height: auto;
+    &.video {
+      .slide-hero-video {
+        position: relative;
+        display: flex;
+        height: 100%;
+        video {
+          display: flex;
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &__card {
+    height: 100%;
+    display: flex;
+  }
+  &__link {
+    display: flex;
+    picture {
+      display: flex;
+    }
+  }
+  &__swiper-pagination {
+    padding: 0 20px;
+    display: flex;
+    justify-content: end;
+    & .swiper-pagination-bullet {
+      width: 7px;
+      height: 5px;
+      background-color: var(--color-text-white);
+      opacity: 1;
+      border-radius: 0;
+      position: relative;
+      margin: 0 7px !important;
+      &:first-child::before {
+        border-top-color: var(--color-text-white);
+      }
+      &:last-child::after {
+        border-bottom-color: var(--color-text-white);
+      }
+      &::before {
+        display: inline-block;
+        content: "";
+        border-top: 5px solid transparent;
+        border-right: 5px solid var(--color-text-white);
+        position: absolute;
+        left: -5px;
+        top: 0;
+      }
+      &::after {
+        display: inline-block;
+        content: "";
+        border-left: 5px solid var(--color-text-white);
+        border-bottom: 5px solid transparent;
+        position: absolute;
+        right: -5px;
+        top: 0;
+      }
+    }
+
+    & .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: var(--color-background-yellow);
+      &:first-child::before {
+        border-top-color: var(--color-background-yellow);
+      }
+      &:last-child::after {
+        border-bottom-color: var(--color-background-yellow);
+      }
+      &::before {
+        border-right-color: var(--color-background-yellow);
+      }
+      &::after {
+        border-left-color: var(--color-background-yellow);
+      }
+    }
+  }
+}
